@@ -143,35 +143,39 @@
 </head>
 <body class="bg-bgPure text-white selection:bg-white selection:text-black">
 
-    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent animate-intro-header">
-        <div class="max-w-[1400px] mx-auto px-3 sm:px-6 h-28 flex items-center justify-between">
-            <!-- Brand Logo with Continuous 360 Rotation Animation (3s duration) & Name Text (moved 10px further right) -->
-            <a href="#" class="flex items-center group" style="margin-left: 10px;">
-                <div class="w-12 h-12 flex items-center justify-center overflow-hidden [animation:spin_3s_linear_infinite] z-10">
-                    <img src="https://i.ibb.co/0jKnCvdd/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" style="filter: none;" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
-                </div>
-                <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white ml-2">Iterations</span>
-            </a>
+    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent animate-intro-header py-6">
+        <div class="max-w-[1450px] mx-auto px-4 sm:px-6 flex items-center justify-between">
+            
+            <!-- Left: Empty or spacer balance -->
+            <div class="w-[180px] hidden lg:block"></div>
 
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center gap-12 text-sm font-normal text-gray-300 tracking-wider">
-                <a href="#work" class="hover:text-white transition-colors">Work</a>
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#process" class="hover:text-white transition-colors">Process</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
+            <!-- Center: Navigation Pill Container with Logo on Left -->
+            <nav class="hidden md:flex items-center gap-2 px-3 py-2 rounded-full glass-pill text-sm font-normal text-gray-300 tracking-wide bg-[#0a0a0c]/80 border border-white/10 mx-auto">
+                <!-- Logo inside center header -->
+                <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 transition-all mr-2">
+                    <div class="w-5 h-5 flex items-center justify-center overflow-hidden [animation:spin_3s_linear_infinite]">
+                        <img src="https://i.ibb.co/0jKnCvdd/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
+                    </div>
+                </a>
+                <a href="#work" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Work</a>
+                <a href="#services" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Services</a>
+                <a href="#process" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Process</a>
+                <a href="#pricing" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Pricing</a>
+                <a href="#faq" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">FAQ</a>
             </nav>
 
-            <!-- Book a Project Button with Tally Link -->
-            <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 rounded-full glass-pill text-sm font-medium text-white/95 hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] tracking-wider">
-                Book a project
+            <!-- Right: Get a Proposal Button (Pill with magnifying glass search style) -->
+            <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-6 py-2.5 rounded-full glass-pill text-sm font-medium text-white/95 hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] tracking-wider">
+                <svg class="w-4 h-4 text-gray-400 group-hover:text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Get a Proposal</span>
             </a>
         </div>
     </header>
 
     <main>
         <!-- Decoupled Hero Sections -->
-        <!-- Parallax Hero Video Carousel Container (Positioned independently in the background) -->
-        <div class="absolute top-44 right-2 lg:right-10 w-full max-w-[608px] flex flex-col items-center justify-center py-4 px-3 opacity-85 hover:opacity-100 transition-opacity z-10 pointer-events-auto animate-intro-carousel" id="hero-carousel-container">
+        <!-- Parallax Hero Video Carousel Container (Moved further left and scaled down by 10%) -->
+        <div class="absolute top-44 right-6 lg:right-20 w-full max-w-[547px] flex flex-col items-center justify-center py-4 px-3 opacity-85 hover:opacity-100 transition-opacity z-10 pointer-events-auto animate-intro-carousel" id="hero-carousel-container">
             <div class="relative w-full aspect-[16/9] flex items-center justify-center perspective-[1400px]" style="perspective: 1400px;">
                 
                 <!-- Carousel Deck Wrapper -->
@@ -234,17 +238,17 @@
                 <p class="text-[11px] font-mono text-gray-500 mt-2">Click card to rotate or drag horizontally</p>
         </div>
 
-        <!-- Hero Text Section -->
-        <section class="relative pt-[142px] sm:pt-[174px] pb-32 max-w-[1400px] mx-auto px-3 sm:px-6 z-30 pointer-events-none">
+        <!-- Hero Text Section (Left padding reduced by 50%) -->
+        <section class="relative pt-[142px] sm:pt-[174px] pb-32 max-w-[1400px] mx-auto px-1.5 sm:px-3 z-30 pointer-events-none">
             <!-- Hero Text Container -->
-            <div class="max-w-[900px] space-y-6 relative z-30 pointer-events-auto animate-intro-text pl-0 sm:pl-0" style="margin-top: -10px;">
-                    <h1 class="text-7xl sm:text-[120px] xl:text-[150px] font-black tracking-tight text-white leading-[0.88] select-none flex flex-col">
+            <div class="max-w-[900px] space-y-6 relative z-30 pointer-events-auto animate-intro-text pl-0 sm:pl-0" style="margin-top: 50px;">
+                    <h1 class="text-4xl sm:text-[85px] xl:text-[110px] font-semibold tracking-tight text-white leading-[0.88] select-none flex flex-col">
                         <span class="block">Build.</span>
-                        <span class="block pl-10 sm:pl-20">Launch.</span>
-                        <span class="block pl-20 sm:pl-[150px] text-gray-400">Convert.</span>
+                        <span class="block pl-20 sm:pl-40">Launch.</span>
+                        <span class="block pl-40 sm:pl-[280px] text-gray-400">Convert.</span>
                     </h1>
 
-                    <div class="max-w-[450px] space-y-3 pt-4 pl-2">
+                    <div class="max-w-[450px] space-y-3 pt-4 pl-1">
                         <p class="text-base sm:text-xl font-medium text-white tracking-tight leading-snug">
                             Motion design for SaaS products that needs to be understood by a Modern World.
                         </p>
@@ -254,6 +258,18 @@
                     </div>
                 </div>
             </section>
+        </div>
+
+        <!-- Availability Badge: 4 spots left NOVEMBER with blinking dot (moved below carousel to the far right) -->
+        <div class="max-w-[1400px] mx-auto px-3 sm:px-6 relative z-30 pointer-events-auto flex justify-end -mt-16 mb-20">
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-pill bg-[#0a0a0c]/80 border border-white/10 shadow-lg cursor-default select-none">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-semibold text-white tracking-wide">4 spots left</span>
+                <span class="text-xs font-mono text-gray-400 tracking-widest">NOVEMBER</span>
+            </div>
         </div>
 
         <!-- Display Videos Section (12 precise videos with product names) -->
