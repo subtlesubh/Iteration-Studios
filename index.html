@@ -570,10 +570,10 @@
 
         updatePhysicalCarousel();
 
-        let carouselInterval = setInterval(nextPhysicalSlide, 7000);
+        let carouselInterval = setInterval(nextPhysicalSlide, 5000);
         deck.addEventListener('mouseenter', () => clearInterval(carouselInterval));
         deck.addEventListener('mouseleave', () => {
-            carouselInterval = setInterval(nextPhysicalSlide, 7000);
+            carouselInterval = setInterval(nextPhysicalSlide, 5000);
         });
 
         // Video Modal Lightbox Logic
