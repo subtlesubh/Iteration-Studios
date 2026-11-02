@@ -566,50 +566,11 @@
 
         updatePhysicalCarousel();
 
-        let carouselInterval = setInterval(nextPhysicalSlide, 3000);
+        let carouselInterval = setInterval(nextPhysicalSlide, 6000);
         deck.addEventListener('mouseenter', () => clearInterval(carouselInterval));
         deck.addEventListener('mouseleave', () => {
-            carouselInterval = setInterval(nextPhysicalSlide, 3000);
+            carouselInterval = setInterval(nextPhysicalSlide, 6000);
         });
 
         // Video Modal Lightbox Logic
-        function openVideoModal(urlOrHtml, title, desc) {
-            const modal = document.getElementById('video-modal');
-            const container = document.getElementById('modal-content-container');
-            const titleEl = document.getElementById('modal-title');
-            const descEl = document.getElementById('modal-desc');
-
-            titleEl.textContent = title;
-            descEl.textContent = desc;
-
-            // Ensure autoplay parameter is active and iframe is cleanly constructed
-            let finalUrl = urlOrHtml;
-            if (!finalUrl.includes('autoplay=1')) {
-                finalUrl += (finalUrl.includes('?') ? '&' : '?') + 'autoplay=1';
-            }
-
-            container.innerHTML = `<iframe id="modal-iframe" class="w-full h-full" src="${finalUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeVideoModal() {
-            const modal = document.getElementById('video-modal');
-            const container = document.getElementById('modal-content-container');
-
-            container.innerHTML = '<iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeVideoModal();
-            }
-        });
-    </script>
-</body>
-</html>
+// ... existing code ... -->
