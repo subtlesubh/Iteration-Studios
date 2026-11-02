@@ -76,11 +76,13 @@
 </head>
 <body class="bg-bgPure text-white selection:bg-white selection:text-black">
 
-    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent border-b border-white/[0.04]">
+    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <div class="max-w-[1400px] mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80" alt="Iteration Studios" class="w-8 h-8 rounded-lg object-cover group-hover:scale-105 transition-transform duration-300 border border-white/20" onerror="this.src='https://placehold.co/100x100/111/fff?text=IS'">
+            <!-- Brand Logo with Custom Hosted Image Asset, No Borders or Shadows (Made smaller) -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-7 h-7 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                    <img src="https://i.ibb.co/rRfZFf63/logo.png" alt="Iteration Studios Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
+                </div>
                 <span class="font-bold text-xl tracking-tight text-white font-sans">Iteration Studios</span>
             </a>
 
@@ -123,17 +125,17 @@
                     </div>
                 </div>
 
-                <!-- Right Column: 3 YouTube Videos in Hero Carousel -->
-                <div class="lg:col-span-6 relative w-full h-[380px] sm:h-[480px] lg:h-[560px] flex items-center justify-center">
-                    <div id="hero-video-carousel" class="relative w-full h-full rounded-3xl overflow-hidden border border-white/15 bg-cardDark shadow-2xl group">
+                <!-- Right Column: 3 YouTube Videos in Hero Carousel (Aspect Ratio 16:9 standard YouTube) -->
+                <div class="lg:col-span-6 relative w-full flex items-center justify-center">
+                    <div id="hero-video-carousel" class="relative w-full rounded-3xl overflow-hidden border border-white/15 bg-cardDark shadow-2xl group" style="aspect-ratio: 16 / 9; min-height: 280px;">
                         
                         <!-- Slide 1: flRxnaGPL4w -->
                         <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center justify-center">
                             <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/flRxnaGPL4w?autoplay=1&mute=1&loop=1&playlist=flRxnaGPL4w&controls=0&showinfo=0" title="Hero Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
-                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">01 / Cinematic Flagship Launch</span>
-                                <span class="text-xs font-mono text-gray-400">SaaS Release</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">01 / Cinematic Flagship Launch</span>
+                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">SaaS Release</span>
                             </div>
                         </div>
 
@@ -141,9 +143,9 @@
                         <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
                             <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/JR8Z5yXg2-Q?autoplay=1&mute=1&loop=1&playlist=JR8Z5yXg2-Q&controls=0&showinfo=0" title="Hero Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
-                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">02 / Dynamic Product Walkthrough</span>
-                                <span class="text-xs font-mono text-gray-400">UI Motion</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">02 / Dynamic Product Walkthrough</span>
+                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">UI Motion</span>
                             </div>
                         </div>
 
@@ -151,31 +153,18 @@
                         <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
                             <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/Ed4m8gHR1Mo?autoplay=1&mute=1&loop=1&playlist=Ed4m8gHR1Mo&controls=0&showinfo=0" title="Hero Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
-                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">03 / Interactive Explainer Story</span>
-                                <span class="text-xs font-mono text-gray-400">Brand Motion</span>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">03 / Interactive Explainer Story</span>
+                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">Brand Motion</span>
                             </div>
                         </div>
 
                         <!-- Carousel Navigation Controls -->
-                        <div class="absolute top-4 right-4 z-20 flex items-center gap-2">
-                            <button onclick="prevSlide()" class="w-9 h-9 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">‹</button>
-                            <button onclick="nextSlide()" class="w-9 h-9 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">›</button>
+                        <div class="absolute top-3 right-3 z-20 flex items-center gap-2">
+                            <button onclick="prevSlide()" class="w-8 h-8 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-xs">‹</button>
+                            <button onclick="nextSlide()" class="w-8 h-8 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-xs">›</button>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="pt-12 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 z-10">
-                <div>
-                    <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-sans">Q4 2026</div>
-                    <div class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-gray-500 mt-1">CURRENTLY BOOKING</div>
-                </div>
-
-                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-pill border border-white/10 text-xs font-mono text-gray-300">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
-                    <span class="font-medium text-white">4 spots left</span>
-                    <span class="text-gray-500 uppercase font-mono tracking-wider">OCTOBER</span>
                 </div>
             </div>
         </section>
