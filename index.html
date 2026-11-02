@@ -78,14 +78,12 @@
 
     <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <div class="max-w-[1400px] mx-auto px-6 sm:px-10 h-28 flex items-center justify-between">
-            <!-- Brand Logo with Continuous 360 Rotation Animation & Name Image -->
-            <a href="#" class="flex items-center gap-1.5 group">
-                <div class="w-8 h-8 flex items-center justify-center overflow-hidden [animation:spin_6s_linear_infinite] z-10">
+            <!-- Brand Logo with Continuous 360 Rotation Animation & Name Text -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-7 h-7 flex items-center justify-center overflow-hidden [animation:spin_6s_linear_infinite] z-10">
                     <img src="https://i.ibb.co/rRfZFf63/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" style="filter: none;" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
                 </div>
-                <div class="h-10 flex items-center">
-                    <img src="https://iili.io/n43I4vn.png" alt="Iterations" class="h-6 sm:h-7 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/180x50/030304/ffffff?text=Iterations';" />
-                </div>
+                <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Iterations</span>
             </a>
 
             <!-- Navigation Links -->
@@ -104,20 +102,71 @@
     </header>
 
     <main>
-        <section class="relative min-h-[75vh] pt-24 sm:pt-32 pb-8 flex flex-col justify-between max-w-[1400px] mx-auto px-6 sm:px-10 overflow-hidden">
-            
-            <!-- Hero Layout Container -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center my-auto pt-4">
+        <!-- Decoupled Hero Sections -->
+        <!-- Parallax Hero Video Carousel Container (Positioned independently in the background) -->
+        <div class="absolute top-44 right-4 lg:right-16 w-full max-w-[620px] flex flex-col items-center justify-center py-4 px-6 opacity-85 hover:opacity-100 transition-opacity z-10 pointer-events-auto" id="hero-carousel-container">
+            <div class="relative w-full aspect-[16/9] flex items-center justify-center perspective-[1400px]" style="perspective: 1400px;">
                 
-                <!-- Left Column: Headlines with Increasing Indentation -->
-                <div class="lg:col-span-6 z-10 space-y-6">
-                    <h1 class="text-6xl sm:text-8xl xl:text-[120px] font-black tracking-tight text-white leading-[0.65] select-none flex flex-col">
+                <!-- Carousel Deck Wrapper -->
+                <div id="carousel-deck" class="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none" style="transform-style: preserve-3d;">
+                        
+                        <!-- Card 1: Sendr -->
+                        <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="0" onclick="handleCardClick(0)">
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/75KbxI2S4pk?autoplay=1&mute=1&loop=1&playlist=75KbxI2S4pk&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Sendr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Sendr / Product Walkthrough</span>
+                                <span class="text-xs font-mono text-gray-400">1080p HD</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Dots -->
+                        <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="1" onclick="handleCardClick(1)">
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Dots" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Dots / Explainer Story</span>
+                                <span class="text-xs font-mono text-gray-400">1080p HD</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: NoodleSeed -->
+                        <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="2" onclick="handleCardClick(2)">
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/3m4XFdXHmlo?autoplay=1&mute=1&loop=1&playlist=3m4XFdXHmlo&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="NoodleSeed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">NoodleSeed / UI Motion</span>
+                                <span class="text-xs font-mono text-gray-400">1080p HD</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Carousel Controls & Indicators -->
+                <div class="flex items-center gap-6 mt-6 z-20">
+                    <button onclick="prevPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">‹</button>
+                    <div class="flex items-center gap-2" id="carousel-dots">
+                        <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white transition-all cursor-pointer" data-dot="0"></button>
+                        <button onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all cursor-pointer" data-dot="1"></button>
+                        <button onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all cursor-pointer" data-dot="2"></button>
+                    </div>
+                    <button onclick="nextPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">›</button>
+                </div>
+                <p class="text-[11px] font-mono text-gray-500 mt-2">Click card to rotate or drag horizontally</p>
+        </div>
+
+        <!-- Hero Text Section (Moved 20px further down independently - total 40px down) -->
+        <section class="relative pt-[152px] sm:pt-[184px] pb-32 max-w-[1400px] mx-auto px-6 sm:px-10 z-30 pointer-events-none">
+            <!-- Hero Text Container -->
+            <div class="max-w-[850px] space-y-6 relative z-30 pointer-events-auto">
+                    <h1 class="text-7xl sm:text-[120px] xl:text-[150px] font-black tracking-tight text-white leading-[0.88] select-none flex flex-col">
                         <span class="block">Build.</span>
                         <span class="block pl-12 sm:pl-20">Launch.</span>
                         <span class="block pl-24 sm:pl-40 text-gray-400">Convert.</span>
                     </h1>
 
-                    <div class="max-w-[450px] space-y-3 pt-1">
+                    <div class="max-w-[450px] space-y-3 pt-4">
                         <p class="text-base sm:text-xl font-medium text-white tracking-tight leading-snug">
                             Motion design for SaaS products that needs to be understood by a Modern World.
                         </p>
@@ -126,61 +175,8 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Right Column: Interactive 3D/Physical Carousel for Hero Videos -->
-                <div class="lg:col-span-6 relative w-full flex flex-col items-center justify-center py-2 -mt-4 sm:-mt-8" id="hero-carousel-container">
-                    <div class="relative w-full max-w-[560px] aspect-[16/9] flex items-center justify-center perspective-[1400px]" style="perspective: 1400px;">
-                        
-                        <!-- Carousel Deck Wrapper -->
-                        <div id="carousel-deck" class="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none" style="transform-style: preserve-3d;">
-                            
-                            <!-- Card 1: Sendr -->
-                            <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="0" onclick="handleCardClick(0)">
-                                <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/75KbxI2S4pk?autoplay=1&mute=1&loop=1&playlist=75KbxI2S4pk&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Sendr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                                    <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Sendr / Product Walkthrough</span>
-                                    <span class="text-xs font-mono text-gray-400">1080p HD</span>
-                                </div>
-                            </div>
-
-                            <!-- Card 2: Dots -->
-                            <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="1" onclick="handleCardClick(1)">
-                                <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Dots" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                                    <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Dots / Explainer Story</span>
-                                    <span class="text-xs font-mono text-gray-400">1080p HD</span>
-                                </div>
-                            </div>
-
-                            <!-- Card 3: NoodleSeed -->
-                            <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="2" onclick="handleCardClick(2)">
-                                <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/3m4XFdXHmlo?autoplay=1&mute=1&loop=1&playlist=3m4XFdXHmlo&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="NoodleSeed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                                    <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">NoodleSeed / UI Motion</span>
-                                    <span class="text-xs font-mono text-gray-400">1080p HD</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Carousel Controls & Indicators -->
-                    <div class="flex items-center gap-6 mt-6 z-20">
-                        <button onclick="prevPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">‹</button>
-                        <div class="flex items-center gap-2" id="carousel-dots">
-                            <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white transition-all cursor-pointer" data-dot="0"></button>
-                            <button onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all cursor-pointer" data-dot="1"></button>
-                            <button onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all cursor-pointer" data-dot="2"></button>
-                        </div>
-                        <button onclick="nextPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">›</button>
-                    </div>
-                    <p class="text-[11px] font-mono text-gray-500 mt-2">Click card to rotate or drag horizontally</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- Display Videos Section (12 precise videos with product names) -->
         <section id="work" class="max-w-[1400px] mx-auto px-6 sm:px-10 py-32 border-t border-white/[0.06]">
@@ -464,13 +460,13 @@
                     card.style.filter = 'blur(0px)';
                 } else if (offset === 1) {
                     // Right Card
-                    card.style.transform = 'translateX(170px) translateZ(-160px) rotateY(-20deg) scale(0.85)';
+                    card.style.transform = 'translateX(130px) translateZ(-160px) rotateY(-18deg) scale(0.82)';
                     card.style.zIndex = '20';
                     card.style.opacity = '0.7';
                     card.style.filter = 'blur(1px)';
                 } else if (offset === totalCards - 1) {
                     // Left Card
-                    card.style.transform = 'translateX(-170px) translateZ(-160px) rotateY(20deg) scale(0.85)';
+                    card.style.transform = 'translateX(-130px) translateZ(-160px) rotateY(18deg) scale(0.82)';
                     card.style.zIndex = '20';
                     card.style.opacity = '0.7';
                     card.style.filter = 'blur(1px)';
