@@ -137,15 +137,15 @@
                                 <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Claude / Cinematic Launch</span>
                                 <span class="text-[10px] sm:text-xs font-mono text-gray-400">1080p HD</span>
                             </div>
-                        </div>
-
-                        <!-- Slide 2: Jumpshare Video for Sendr -->
+                        <!-- Slide 2: Vimeo Embed for Sendr -->
                         <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
-                            <iframe class="w-full h-full pointer-events-none" src="https://jumpshare.com/embed/Re5VPq875tFn0Da3DbY3" title="Sendr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div style="padding:56.25% 0 0 0;position:relative; width:100%; height:100%;">
+                                <iframe src="https://player.vimeo.com/video/1242304063?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Sendr 1"></iframe>
+                            </div>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
                                 <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Sendr / Product Walkthrough</span>
-                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">HD Stream</span>
+                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">Vimeo HD</span>
                             </div>
                         </div>
 
@@ -198,10 +198,10 @@
                     </div>
                 </div>
 
-                <!-- 2. Sendr (Jumpshare) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://jumpshare.com/embed/Re5VPq875tFn0Da3DbY3', 'Sendr', 'Product walkthrough video showcasing Sendr via Jumpshare.')">
+                <!-- 2. Sendr (Vimeo Embed) -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('<div style=\'padding:56.25% 0 0 0;position:relative;width:100%;height:100%;\'><iframe src=\'https://player.vimeo.com/video/1242304063?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1\' frameborder=\'0\' allow=\'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\' referrerpolicy=\'strict-origin-when-cross-origin\' style=\'position:absolute;top:0;left:0;width:100%;height:100%;\' title=\'Sendr 1\'></iframe></div><script src=\'https://player.vimeo.com/api/player.js\'><\/script>', 'Sendr', 'Product walkthrough video showcasing Sendr via Vimeo.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
-                        <img src="https://placehold.co/1280x720/0a0a0c/ffffff?text=Sendr+Demo" alt="Sendr" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <img src="https://placehold.co/1280x720/0a0a0c/ffffff?text=Sendr+Vimeo" alt="Sendr" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -408,7 +408,7 @@
                     </div>
                     <button onclick="closeVideoModal()" class="w-9 h-9 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors cursor-pointer text-sm">✕</button>
                 </div>
-                <div class="relative aspect-video w-full bg-black">
+                <div id="modal-content-container" class="relative aspect-video w-full bg-black flex items-center justify-center">
                     <iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
@@ -457,16 +457,22 @@
             nextSlide();
         }, 6000);
 
-        // Video Modal Lightbox Logic
-        function openVideoModal(url, title, desc) {
+        // Video Modal Lightbox Logic (supports iframe URLs or full HTML embed strings like Vimeo)
+        function openVideoModal(urlOrHtml, title, desc) {
             const modal = document.getElementById('video-modal');
-            const iframe = document.getElementById('modal-iframe');
+            const container = document.getElementById('modal-content-container');
             const titleEl = document.getElementById('modal-title');
             const descEl = document.getElementById('modal-desc');
 
             titleEl.textContent = title;
             descEl.textContent = desc;
-            iframe.src = url;
+
+            if (urlOrHtml.trim().startsWith('<')) {
+                container.innerHTML = urlOrHtml;
+            } else {
+                container.innerHTML = `<iframe id="modal-iframe" class="w-full h-full" src="${urlOrHtml}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            }
+
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
@@ -474,9 +480,9 @@
 
         function closeVideoModal() {
             const modal = document.getElementById('video-modal');
-            const iframe = document.getElementById('modal-iframe');
+            const container = document.getElementById('modal-content-container');
 
-            iframe.src = '';
+            container.innerHTML = '<iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
             modal.classList.remove('flex');
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
