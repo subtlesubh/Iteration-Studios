@@ -544,6 +544,16 @@
         const physicalCards = document.querySelectorAll('.carousel-physical-card');
         const totalCards = physicalCards.length;
         const dots = document.querySelectorAll('[data-dot]');
+        let carouselTimer = null;
+
+        function scheduleNextSpin() {
+            if (carouselTimer) clearTimeout(carouselTimer);
+            const randomInterval = Math.floor(Math.random() * (9000 - 5000 + 1)) + 5000;
+            carouselTimer = setTimeout(() => {
+                nextPhysicalSlide(false);
+                scheduleNextSpin();
+            }, randomInterval);
+        }
 
         function updatePhysicalCarousel() {
             physicalCards.forEach((card, i) => {
@@ -591,25 +601,35 @@
             });
         }
 
-        function nextPhysicalSlide() {
+        function nextPhysicalSlide(isManual = true) {
             activePhysicalIndex = (activePhysicalIndex + 1) % totalCards;
             updatePhysicalCarousel();
+            if (isManual) {
+                scheduleNextSpin();
+            }
         }
 
-        function prevPhysicalSlide() {
+        function prevPhysicalSlide(isManual = true) {
             activePhysicalIndex = (activePhysicalIndex - 1 + totalCards) % totalCards;
             updatePhysicalCarousel();
+            if (isManual) {
+                scheduleNextSpin();
+            }
         }
 
-        function goToSlide(index) {
+        function goToSlide(index, isManual = true) {
             activePhysicalIndex = index;
             updatePhysicalCarousel();
+            if (isManual) {
+                scheduleNextSpin();
+            }
         }
 
         function handleCardClick(index) {
             if (index !== activePhysicalIndex) {
                 activePhysicalIndex = index;
                 updatePhysicalCarousel();
+                scheduleNextSpin();
             } else {
                 const videoUrls = [
                     'https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
@@ -645,9 +665,9 @@
             const diff = e.clientX - startX;
             if (Math.abs(diff) > 70) {
                 if (diff > 0) {
-                    prevPhysicalSlide();
+                    prevPhysicalSlide(true);
                 } else {
-                    nextPhysicalSlide();
+                    nextPhysicalSlide(true);
                 }
                 isDragging = false;
             }
@@ -665,24 +685,14 @@
             const diff = e.changedTouches[0].clientX - startX;
             if (Math.abs(diff) > 50) {
                 if (diff > 0) {
-                    prevPhysicalSlide();
+                    prevPhysicalSlide(true);
                 } else {
-                    nextPhysicalSlide();
+                    nextPhysicalSlide(true);
                 }
             }
         });
 
         updatePhysicalCarousel();
-
-        // Randomized spinning interval generator between 5000ms and 9000ms (5 to 9 seconds)
-        let carouselTimer = null;
-        function scheduleNextSpin() {
-            const randomInterval = Math.floor(Math.random() * (9000 - 5000 + 1)) + 5000;
-            carouselTimer = setTimeout(() => {
-                nextPhysicalSlide();
-                scheduleNextSpin();
-            }, randomInterval);
-        }
         scheduleNextSpin();
 
         deck.addEventListener('mouseenter', () => {
