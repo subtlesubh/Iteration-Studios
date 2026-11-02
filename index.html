@@ -7,13 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        sans: ['"Vastago Grotesk"', '"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
@@ -27,15 +27,16 @@
         }
     </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
         body {
             background-color: #030304;
             color: #ffffff;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            font-family: 'Vastago Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Glassmorphism utility classes */
         .glass-pill {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -58,7 +59,6 @@
             transform: translateY(-4px);
         }
 
-        /* Hide scrollbars for clean aesthetic */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -78,16 +78,16 @@
 
     <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <div class="max-w-[1400px] mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
-            <!-- Brand Logo with Custom Hosted Image Asset, No Borders or Shadows (Made smaller) -->
+            <!-- Brand Logo with Continuous 360 Rotation Animation -->
             <a href="#" class="flex items-center gap-2.5 group">
-                <div class="w-7 h-7 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                    <img src="https://i.ibb.co/rRfZFf63/logo.png" alt="Iteration Studios Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
+                <div class="w-6 h-6 flex items-center justify-center overflow-hidden [animation:spin_6s_linear_infinite]">
+                    <img src="https://i.ibb.co/rRfZFf63/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
                 </div>
-                <span class="font-bold text-xl tracking-tight text-white font-sans">Iteration Studios</span>
+                <span class="font-extrabold text-base tracking-widest text-white font-sans">Iterations</span>
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-300">
+            <nav class="hidden md:flex items-center gap-10 text-xs font-thin text-gray-400 tracking-wider">
                 <a href="#work" class="hover:text-white transition-colors">Work</a>
                 <a href="#services" class="hover:text-white transition-colors">Services</a>
                 <a href="#process" class="hover:text-white transition-colors">Process</a>
@@ -95,7 +95,7 @@
             </nav>
 
             <!-- Book a Project Button with Tally Link -->
-            <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full glass-pill text-xs sm:text-sm font-medium text-white hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+            <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="px-6 py-2 rounded-full glass-pill text-xs font-thin text-white/90 hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] tracking-wider">
                 Book a project
             </a>
         </div>
@@ -107,64 +107,75 @@
             <!-- Hero Layout Container -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto pt-6">
                 
-                <!-- Left Column: Updated Headlines and Subtext -->
+                <!-- Left Column: Headlines with Increasing Indentation -->
                 <div class="lg:col-span-6 z-10 space-y-10">
-                    <h1 class="text-5xl sm:text-7xl xl:text-[95px] font-extrabold tracking-tight text-white leading-[0.95] select-none">
-                        Build.<br />
-                        Launch.<br />
-                        <span class="text-gray-400">Convert.</span>
+                    <h1 class="text-5xl sm:text-7xl xl:text-[95px] font-extrabold tracking-tight text-white leading-[0.95] select-none flex flex-col">
+                        <span class="block">Build.</span>
+                        <span class="block pl-10 sm:pl-16">Launch.</span>
+                        <span class="block pl-20 sm:pl-32 text-gray-400">Convert.</span>
                     </h1>
 
                     <div class="max-w-xl space-y-4 pt-2">
-                        <p class="text-xl sm:text-2xl font-normal text-gray-200 tracking-tight leading-snug">
-                            We create cinematic launch videos, product demos, and explainers that turn complex software into memorable moments.
+                        <p class="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
+                            Motion design for SaaS products that needs to be understood by a Modern World.
                         </p>
-                        <p class="text-xs sm:text-sm text-gray-500 font-normal leading-relaxed">
+                        <p class="text-xs sm:text-sm text-gray-400 font-bold leading-relaxed">
                             Independent motion studio crafting clarity that sells from first frame to final export.
                         </p>
                     </div>
                 </div>
 
-                <!-- Right Column: 3 YouTube Videos in Hero Carousel (Aspect Ratio 16:9 standard YouTube) -->
-                <div class="lg:col-span-6 relative w-full flex items-center justify-center">
-                    <div id="hero-video-carousel" class="relative w-full rounded-3xl overflow-hidden border border-white/15 bg-cardDark shadow-2xl group" style="aspect-ratio: 16 / 9; min-height: 280px;">
+                <!-- Right Column: Interactive 3D/Physical Carousel for Hero Videos -->
+                <div class="lg:col-span-6 relative w-full flex flex-col items-center justify-center py-10" id="hero-carousel-container">
+                    <div class="relative w-full max-w-xl h-[340px] sm:h-[380px] flex items-center justify-center perspective-[1200px]" style="perspective: 1200px;">
                         
-                        <!-- Slide 1: flRxnaGPL4w (Product: Claude) -->
-                        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center justify-center">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/flRxnaGPL4w?autoplay=1&mute=1&loop=1&playlist=flRxnaGPL4w&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Claude" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                                <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Claude / Cinematic Launch</span>
-                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">1080p HD</span>
+                        <!-- Carousel Deck Wrapper -->
+                        <div id="carousel-deck" class="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none" style="transform-style: preserve-3d;">
+                            
+                            <!-- Card 1: Sendr -->
+                            <div class="carousel-physical-card absolute w-[85%] sm:w-[420px] aspect-video rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="0" onclick="handleCardClick(0)">
+                                <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/75KbxI2S4pk?autoplay=1&mute=1&loop=1&playlist=75KbxI2S4pk&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Sendr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                    <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Sendr / Product Walkthrough</span>
+                                    <span class="text-xs font-mono text-gray-400">1080p HD</span>
+                                </div>
                             </div>
-                        <!-- Slide 2: Vimeo Embed for Sendr -->
-                        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
-                            <div style="padding:56.25% 0 0 0;position:relative; width:100%; height:100%;">
-                                <iframe src="https://player.vimeo.com/video/1242304063?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Sendr 1"></iframe>
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
-                                <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Sendr / Product Walkthrough</span>
-                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">Vimeo HD</span>
-                            </div>
-                        </div>
 
-                        <!-- Slide 3: PBecnjxvsnA (Product: Dots) -->
-                        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Dots" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                                <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Dots / Explainer Story</span>
-                                <span class="text-[10px] sm:text-xs font-mono text-gray-400">1080p HD</span>
+                            <!-- Card 2: Dots -->
+                            <div class="carousel-physical-card absolute w-[85%] sm:w-[420px] aspect-video rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="1" onclick="handleCardClick(1)">
+                                <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="Dots" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                    <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Dots / Explainer Story</span>
+                                    <span class="text-xs font-mono text-gray-400">1080p HD</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Carousel Navigation Controls -->
-                        <div class="absolute top-3 right-3 z-20 flex items-center gap-2">
-                            <button onclick="prevSlide()" class="w-8 h-8 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-xs cursor-pointer">‹</button>
-                            <button onclick="nextSlide()" class="w-8 h-8 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-xs cursor-pointer">›</button>
+                            <!-- Card 3: NoodleSeed -->
+                            <div class="carousel-physical-card absolute w-[85%] sm:w-[420px] aspect-video rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="2" onclick="handleCardClick(2)">
+                                <iframe class="w-full h-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/3m4XFdXHmlo?autoplay=1&mute=1&loop=1&playlist=3m4XFdXHmlo&controls=0&showinfo=0&modestbranding=1&vq=hd1080&hd=1&cc_load_policy=0&enablejsapi=1" title="NoodleSeed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                    <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">NoodleSeed / UI Motion</span>
+                                    <span class="text-xs font-mono text-gray-400">1080p HD</span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+
+                    <!-- Carousel Controls & Indicators -->
+                    <div class="flex items-center gap-6 mt-4 z-20">
+                        <button onclick="prevPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">‹</button>
+                        <div class="flex items-center gap-2" id="carousel-dots">
+                            <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white transition-all cursor-pointer" data-dot="0"></button>
+                            <button onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all cursor-pointer" data-dot="1"></button>
+                            <button onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/30 transition-all cursor-pointer" data-dot="2"></button>
+                        </div>
+                        <button onclick="nextPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">›</button>
+                    </div>
+                    <p class="text-[11px] font-mono text-gray-500 mt-2">Click card to rotate or drag horizontally</p>
                 </div>
             </div>
         </section>
@@ -174,39 +185,21 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Selected Works</span>
-                    <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">Display Videos & Motion Archive</h2>
+                    <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">Recent projects</h2>
                 </div>
                 <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-normal">Explore our curated showcase featuring high-velocity product launches and motion systems.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 1. Claude -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/flRxnaGPL4w?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Claude', 'Cinematic product launch film for Claude.')">
+                <!-- 1. Sendr -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/75KbxI2S4pk?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Sendr', 'Product walkthrough video showcasing Sendr.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
-                        <img src="https://img.youtube.com/vi/flRxnaGPL4w/hqdefault.jpg" alt="Claude" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <img src="https://img.youtube.com/vi/75KbxI2S4pk/hqdefault.jpg" alt="Sendr" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">01 / 12</div>
-                    </div>
-                    <div class="flex items-center justify-between px-2 pb-1">
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Claude</h3>
-                            <p class="text-xs text-gray-500 mt-0.5">Flagship Cinematic Launch</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Sendr (Vimeo Embed) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('<div style=\'padding:56.25% 0 0 0;position:relative;width:100%;height:100%;\'><iframe src=\'https://player.vimeo.com/video/1242304063?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1\' frameborder=\'0\' allow=\'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\' referrerpolicy=\'strict-origin-when-cross-origin\' style=\'position:absolute;top:0;left:0;width:100%;height:100%;\' title=\'Sendr 1\'></iframe></div><script src=\'https://player.vimeo.com/api/player.js\'><\/script>', 'Sendr', 'Product walkthrough video showcasing Sendr via Vimeo.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
-                        <img src="https://placehold.co/1280x720/0a0a0c/ffffff?text=Sendr+Vimeo" alt="Sendr" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
-                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">02 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -216,7 +209,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Dots -->
+                <!-- 2. Dots -->
                 <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/PBecnjxvsnA?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Dots', 'Explainer video platform.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
                         <img src="https://img.youtube.com/vi/PBecnjxvsnA/hqdefault.jpg" alt="Dots" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
@@ -224,7 +217,7 @@
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">03 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">02 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -234,7 +227,7 @@
                     </div>
                 </div>
 
-                <!-- 4. NoodleSeed -->
+                <!-- 3. NoodleSeed -->
                 <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/3m4XFdXHmlo?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'NoodleSeed', 'Motion design and UI animation showcase.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
                         <img src="https://img.youtube.com/vi/3m4XFdXHmlo/hqdefault.jpg" alt="NoodleSeed" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
@@ -242,7 +235,7 @@
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">04 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">03 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -252,7 +245,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Accordio -->
+                <!-- 4. Accordio -->
                 <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/VQsxawVVMFs?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Accordio', 'Cinematic software launch showcase.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
                         <img src="https://img.youtube.com/vi/VQsxawVVMFs/hqdefault.jpg" alt="Accordio" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
@@ -260,7 +253,7 @@
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">05 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">04 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -270,7 +263,7 @@
                     </div>
                 </div>
 
-                <!-- 6. Cerenovus -->
+                <!-- 5. Cerenovus -->
                 <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/VuDjroGZzNU?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Cerenovus', 'Interactive walkthrough and motion graphics.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
                         <img src="https://img.youtube.com/vi/VuDjroGZzNU/hqdefault.jpg" alt="Cerenovus" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
@@ -278,7 +271,7 @@
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">06 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">05 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -288,7 +281,7 @@
                     </div>
                 </div>
 
-                <!-- 7. Kuli -->
+                <!-- 6. Kuli -->
                 <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/hj-pSumbqWo?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Kuli', 'Feature explainer animation system.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
                         <img src="https://img.youtube.com/vi/hj-pSumbqWo/hqdefault.jpg" alt="Kuli" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
@@ -296,7 +289,7 @@
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">07 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">06 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -306,7 +299,7 @@
                     </div>
                 </div>
 
-                <!-- 8. Luncent -->
+                <!-- 7. Luncent -->
                 <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/-ulDYbFotRI?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Luncent', 'Product onboarding and launch video.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
                         <img src="https://img.youtube.com/vi/-ulDYbFotRI/hqdefault.jpg" alt="Luncent" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
@@ -314,7 +307,7 @@
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">08 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">07 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -324,10 +317,28 @@
                     </div>
                 </div>
 
-                <!-- 9. OrangeSlice -->
+                <!-- 8. OrangeSlice -->
                 <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/aCJgZO1FHDQ?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'OrangeSlice', 'Cinematic software update launch.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
                         <img src="https://img.youtube.com/vi/aCJgZO1FHDQ/hqdefault.jpg" alt="OrangeSlice" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">08 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">OrangeSlice</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Update Teaser</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Claude (Moved to 3rd row) -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/FK_kUYttvW4?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0', 'Claude', 'Cinematic product launch film for Claude.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                        <img src="https://img.youtube.com/vi/FK_kUYttvW4/hqdefault.jpg" alt="Claude" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
                         <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -336,8 +347,8 @@
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">OrangeSlice</h3>
-                            <p class="text-xs text-gray-500 mt-0.5">Update Teaser</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Claude</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Flagship Cinematic Launch</p>
                         </div>
                     </div>
                 </div>
@@ -422,7 +433,7 @@
             <div class="w-5 h-5 flex items-center justify-center overflow-hidden">
                 <img src="https://i.ibb.co/rRfZFf63/logo.png" alt="Logo" class="w-full h-full object-contain" />
             </div>
-            <span>© 2026 Iteration Studios. All rights reserved.</span>
+            <span>© 2026 Iterations. All rights reserved.</span>
         </div>
         <div class="flex items-center gap-8 font-medium text-gray-400">
             <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Start a project →</a>
@@ -431,33 +442,139 @@
     </footer>
 
     <script>
-        // Hero Carousel Logic
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-                slide.style.zIndex = i === index ? '10' : '1';
+        // Physical 3D Carousel Logic
+        let activePhysicalIndex = 0;
+        const physicalCards = document.querySelectorAll('.carousel-physical-card');
+        const totalCards = physicalCards.length;
+        const dots = document.querySelectorAll('[data-dot]');
+
+        function updatePhysicalCarousel() {
+            physicalCards.forEach((card, i) => {
+                const offset = (i - activePhysicalIndex + totalCards) % totalCards;
+                
+                card.classList.remove('pointer-events-none');
+                
+                if (offset === 0) {
+                    // Front Active Card
+                    card.style.transform = 'translateX(0px) translateZ(0px) rotateY(0deg) scale(1)';
+                    card.style.zIndex = '30';
+                    card.style.opacity = '1';
+                    card.style.filter = 'blur(0px)';
+                } else if (offset === 1) {
+                    // Right Card
+                    card.style.transform = 'translateX(140px) translateZ(-140px) rotateY(-22deg) scale(0.85)';
+                    card.style.zIndex = '20';
+                    card.style.opacity = '0.7';
+                    card.style.filter = 'blur(1px)';
+                } else if (offset === totalCards - 1) {
+                    // Left Card
+                    card.style.transform = 'translateX(-140px) translateZ(-140px) rotateY(22deg) scale(0.85)';
+                    card.style.zIndex = '20';
+                    card.style.opacity = '0.7';
+                    card.style.filter = 'blur(1px)';
+                } else {
+                    // Back Hidden Card
+                    card.style.transform = 'translateX(0px) translateZ(-280px) rotateY(0deg) scale(0.7)';
+                    card.style.zIndex = '10';
+                    card.style.opacity = '0';
+                    card.style.filter = 'blur(3px)';
+                    card.classList.add('pointer-events-none');
+                }
+            });
+
+            // Update pagination dots
+            dots.forEach((dot, idx) => {
+                if (idx === activePhysicalIndex) {
+                    dot.classList.remove('bg-white/30', 'w-2');
+                    dot.classList.add('bg-white', 'w-6');
+                } else {
+                    dot.classList.remove('bg-white', 'w-6');
+                    dot.classList.add('bg-white/30', 'w-2');
+                }
             });
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+        function nextPhysicalSlide() {
+            activePhysicalIndex = (activePhysicalIndex + 1) % totalCards;
+            updatePhysicalCarousel();
         }
 
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+        function prevPhysicalSlide() {
+            activePhysicalIndex = (activePhysicalIndex - 1 + totalCards) % totalCards;
+            updatePhysicalCarousel();
         }
 
-        // Auto advance carousel every 6 seconds
-        setInterval(() => {
-            nextSlide();
-        }, 6000);
+        function goToSlide(index) {
+            activePhysicalIndex = index;
+            updatePhysicalCarousel();
+        }
 
-        // Video Modal Lightbox Logic (supports iframe URLs or full HTML embed strings like Vimeo)
+        function handleCardClick(index) {
+            if (index !== activePhysicalIndex) {
+                activePhysicalIndex = index;
+                updatePhysicalCarousel();
+            } else {
+                const videoUrls = [
+                    'https://www.youtube-nocookie.com/embed/75KbxI2S4pk?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0',
+                    'https://www.youtube-nocookie.com/embed/PBecnjxvsnA?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0',
+                    'https://www.youtube-nocookie.com/embed/3m4XFdXHmlo?autoplay=1&vq=hd1080&hd=1&cc_load_policy=0&modestbranding=1&rel=0'
+                ];
+                const titles = ['Sendr', 'Dots', 'NoodleSeed'];
+                openVideoModal(videoUrls[index], titles[index], 'Featured Hero Motion Showcase');
+            }
+        }
+
+        // Drag/Swipe Interactivity
+        const deck = document.getElementById('carousel-deck');
+        let startX = 0;
+        let isDragging = false;
+
+        deck.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const diff = e.clientX - startX;
+            if (Math.abs(diff) > 70) {
+                if (diff > 0) {
+                    prevPhysicalSlide();
+                } else {
+                    nextPhysicalSlide();
+                }
+                isDragging = false;
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        deck.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        deck.addEventListener('touchend', (e) => {
+            const diff = e.changedTouches[0].clientX - startX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    prevPhysicalSlide();
+                } else {
+                    nextPhysicalSlide();
+                }
+            }
+        });
+
+        updatePhysicalCarousel();
+
+        let carouselInterval = setInterval(nextPhysicalSlide, 7000);
+        deck.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+        deck.addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(nextPhysicalSlide, 7000);
+        });
+
+        // Video Modal Lightbox Logic
         function openVideoModal(urlOrHtml, title, desc) {
             const modal = document.getElementById('video-modal');
             const container = document.getElementById('modal-content-container');
@@ -467,11 +584,13 @@
             titleEl.textContent = title;
             descEl.textContent = desc;
 
-            if (urlOrHtml.trim().startsWith('<')) {
-                container.innerHTML = urlOrHtml;
-            } else {
-                container.innerHTML = `<iframe id="modal-iframe" class="w-full h-full" src="${urlOrHtml}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            // Ensure autoplay parameter is active and iframe is cleanly constructed
+            let finalUrl = urlOrHtml;
+            if (!finalUrl.includes('autoplay=1')) {
+                finalUrl += (finalUrl.includes('?') ? '&' : '?') + 'autoplay=1';
             }
+
+            container.innerHTML = `<iframe id="modal-iframe" class="w-full h-full" src="${finalUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -488,7 +607,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeVideoModal();
