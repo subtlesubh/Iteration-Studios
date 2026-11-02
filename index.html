@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteration Studios — Motion Design for SaaS Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        bgPure: '#030304',
+                        cardDark: '#0a0a0c',
+                        cardBorder: 'rgba(255, 255, 255, 0.08)',
+                        brandMuted: '#888899',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030304;
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Glassmorphism utility classes */
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glass-panel {
+            background: rgba(12, 12, 15, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hover-card-glow {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-card-glow:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
+        }
+
+        /* Hide scrollbars for clean aesthetic */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030304;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #22222a;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444455;
+        }
+    </style>
+</head>
+<body class="bg-bgPure text-white selection:bg-white selection:text-black">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-bgPure/80 backdrop-blur-md border-b border-white/[0.04]">
+        <div class="max-w-[1400px] mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <svg class="w-7 h-7 text-white group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                    <!-- Left Chevron Diamond -->
+                    <path d="M 45 15 C 45 35, 10 50, 10 50 C 10 50, 45 65, 45 85 C 45 65, 30 50, 30 50 C 30 50, 45 35, 45 15 Z" fill="white"/>
+                    <!-- Right Chevron Diamond -->
+                    <path d="M 55 15 C 55 35, 90 50, 90 50 C 90 50, 55 65, 55 85 C 55 65, 70 50, 70 50 C 70 50, 55 35, 55 15 Z" fill="white"/>
+                </svg>
+                <span class="font-bold text-xl tracking-tight text-white font-sans">Iteration</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-300">
+                <a href="#work" class="hover:text-white transition-colors">Work</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#process" class="hover:text-white transition-colors">Process</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+            </nav>
+
+            <!-- Book a Project Button -->
+            <button onclick="openModal()" class="px-6 py-2.5 rounded-full glass-pill text-xs sm:text-sm font-medium text-white hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Book a project
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-screen pt-28 pb-16 flex flex-col justify-between max-w-[1400px] mx-auto px-6 sm:px-10 overflow-hidden">
+            
+            <!-- Hero Layout Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto pt-6">
+                
+                <!-- Left Column: Giant Headlines and Subtext -->
+                <div class="lg:col-span-7 z-10 space-y-12">
+                    <h1 class="text-6xl sm:text-8xl xl:text-[115px] font-extrabold tracking-tight text-white leading-[0.92] select-none">
+                        Make<br />
+                        Products<br />
+                        Convert<span class="text-white/40">.</span>
+                    </h1>
+
+                    <div class="max-w-xl space-y-3 pt-4">
+                        <p class="text-xl sm:text-2xl font-normal text-gray-200 tracking-tight leading-snug">
+                            Motion design for SaaS products that need to be understood in eight seconds.
+                        </p>
+                        <p class="text-xs sm:text-sm text-gray-500 font-normal leading-relaxed">
+                            Product demos, UI animation systems, and launch films for teams shipping software. One obsession: clarity that sells.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Looping Video Carousel replacing shapes -->
+                <div class="lg:col-span-5 relative w-full h-[400px] sm:h-[520px] lg:h-[600px] flex items-center justify-center">
+                    <div id="hero-video-carousel" class="relative w-full h-full rounded-3xl overflow-hidden border border-white/15 bg-cardDark shadow-2xl group">
+                        
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center justify-center">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">01 / Grok 2.0 Launch</span>
+                                <span class="text-xs font-mono text-gray-400">Cinematic 3D</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+                            <video muted loop playsinline class="w-full h-full object-cover">
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">02 / Lovable Builder</span>
+                                <span class="text-xs font-mono text-gray-400">UI Animation</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+                            <video muted loop playsinline class="w-full h-full object-cover">
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">03 / Kimi Intelligence</span>
+                                <span class="text-xs font-mono text-gray-400">Product Story</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+                            <video muted loop playsinline class="w-full h-full object-cover">
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">04 / Vercel Ship 2026</span>
+                                <span class="text-xs font-mono text-gray-400">Keynote Motion</span>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <div class="absolute top-4 right-4 z-20 flex items-center gap-2">
+                            <button onclick="prevSlide()" class="w-9 h-9 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">‹</button>
+                            <button onclick="nextSlide()" class="w-9 h-9 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">›</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 z-10">
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-sans">Q4 2026</div>
+                    <div class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-gray-500 mt-1">CURRENTLY BOOKING</div>
+                </div>
+
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-pill border border-white/10 text-xs font-mono text-gray-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
+                    <span class="font-medium text-white">4 spots left</span>
+                    <span class="text-gray-500 uppercase font-mono tracking-wider">OCTOBER</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="max-w-[1400px] mx-auto px-6 sm:px-10 py-32 border-t border-white/[0.06]">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Selected Works</span>
+                    <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">Motion in Action (10 Display Videos)</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-normal">Explore our full showcase of 10 high-conversion product videos and launch films.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Work Card 1 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Grok 2.0 Launch Film', 'AI Intelligence rendered in kinetic 3D motion.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">01 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Grok 2.0 Launch Film</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Full Launch Campaign & Brand Motion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 2 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Lovable AI Web App Builder', 'Autonomous UI generation animated at 60 FPS.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">02 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Lovable Builder</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Product Demo & Interactive UI Animation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 3 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Kimi Intelligence Story', 'Simplifying complex neural networks into instant user moments.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">03 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Kimi Intelligence</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Product Story & Explainer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 4 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Vercel Ship Keynote', 'High-velocity release keynote motion visuals.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">04 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Vercel Ship 2026</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Keynote Cinematic Opening</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 5 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Linear Workflow Motion', 'Precision interface choreography and keyboard shortcuts.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">05 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Linear Workflow</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">UI Motion System</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 6 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Raycast Command Bar', 'Lightning fast extensions and command palette demo.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackSeeTheWorld.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">06 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Raycast Extensions</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Product Walkthrough</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 7 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Supabase Realtime Sync', 'Database synchronization visualized in 3D physics.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">07 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Supabase Realtime</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Feature Explainer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 8 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Figma Config Intro', 'Design system token propagation animated seamlessly.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">08 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Figma Variables</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Launch Teaser</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 9 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Resend Email Deliverability', 'Crystal clear inbox analytics and speed demo.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">09 / 10</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Resend Deliverability</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Product Demo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 10 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Cursor AI Pair Programmer', 'Context-aware code completion in fast motion.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">10 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Cursor AI Editor</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Launch & Workflow Film</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 11 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('PlanetScale DB Branching', 'Zero-downtime schema migrations visualized in real-time 3D.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">11 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">PlanetScale Branching</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Product Launch & Feature Explainer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Card 12 -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openLightbox('Vite Build Engine', 'Lightning fast bundling and Hot Module Replacement choreography.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">12 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Vite 6.0 Core</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Kinetic UI & Speed Demo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="max-w-[1400px] mx-auto px-6 sm:px-10 py-32 border-t border-white/[0.06]">
+            <div class="max-w-2xl mb-20">
+                <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Core Capabilities</span>
+                <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">Designed to Convert</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-3xl hover-card-glow flex flex-col justify-between min-h-[380px]">
+                    <div>
+                        <div class="text-xs font-mono text-gray-500 mb-6">01 / LAUNCH FILMS</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Launch Films</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">High-impact cinematic releases engineered to create momentum, viral traction, and investor confidence.</p>
+                    </div>
+                    <div class="text-xs font-mono text-gray-500 border-t border-white/10 pt-4">3D & 2D Motion · Sound Design · Art Direction</div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl hover-card-glow flex flex-col justify-between min-h-[380px]">
+                    <div>
+                        <div class="text-xs font-mono text-gray-500 mb-6">02 / PRODUCT DEMOS</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Product Demos</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Laser-focused interface walkthroughs that showcase core workflows without screen recordings.</p>
+                    </div>
+                    <div class="text-xs font-mono text-gray-500 border-t border-white/10 pt-4">Vector UI Redraws · Dynamic Camera Tracking</div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl hover-card-glow flex flex-col justify-between min-h-[380px]">
+                    <div>
+                        <div class="text-xs font-mono text-gray-500 mb-6">03 / EXPLAINER SYSTEMS</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">UI Motion Systems</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Scalable animation guidelines and component motion for web, apps, and live pitch decks.</p>
+                    </div>
+                    <div class="text-xs font-mono text-gray-500 border-t border-white/10 pt-4">Component Libraries · Lottie & Rive Exports</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="max-w-[1400px] mx-auto px-6 sm:px-10 py-32 border-t border-white/[0.06]">
+            <div class="glass-panel p-12 sm:p-20 rounded-3xl border border-white/10 text-center relative overflow-hidden">
+                <h2 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6">Ready to make your product convert?</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mb-10 text-base leading-relaxed">Now accepting bookings for Q4 2026 releases. Schedule a scoping call to secure your spot.</p>
+                <button onclick="openModal()" class="px-8 py-4 rounded-full bg-white text-black font-semibold text-base hover:bg-gray-200 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                    Book a project
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about" class="border-t border-white/[0.06] py-12">
+        <div class="max-w-[1400px] mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-gray-500 font-mono">
+            <div>© 2026 Iteration Studios. All rights reserved.</div>
+            <div class="flex items-center gap-8 text-gray-400">
+                <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Vimeo</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-xl flex items-center justify-center p-6">
+        <div class="relative w-full max-w-lg glass-panel rounded-3xl p-8 border border-white/20">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-bold text-white mb-2">Book a Project</h3>
+            <p class="text-xs text-gray-400 mb-6">Tell us about your product release goals and timeline.</p>
+            <form onsubmit="event.preventDefault(); alert('Inquiry received! We will be in touch within 24 hours.'); closeModal();" class="space-y-4">
+                <div>
+                    <label class="block text-[10px] font-mono text-gray-400 mb-1">NAME</label>
+                    <input type="text" required placeholder="Alex Smith" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-white transition-colors"/>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-mono text-gray-400 mb-1">WORK EMAIL</label>
+                    <input type="email" required placeholder="alex@company.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-white transition-colors"/>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-mono text-gray-400 mb-1">PROJECT DETAILS</label>
+                    <textarea rows="3" placeholder="SaaS product launch target date, key features..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-white transition-colors"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-white text-black font-semibold text-sm hover:bg-gray-200 transition-all duration-300">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox Preview Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-2xl flex items-center justify-center p-6">
+        <div class="relative w-full max-w-4xl glass-panel rounded-3xl p-6 border border-white/20">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+            <h3 id="lightbox-title" class="text-xl font-bold text-white mb-1">Project Preview</h3>
+            <p id="lightbox-desc" class="text-xs text-gray-400 mb-4"></p>
+            <div class="aspect-video rounded-2xl bg-cardDark border border-white/10 flex items-center justify-center overflow-hidden">
+                <canvas id="modal-canvas" class="w-full h-full block"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hero Video Carousel Controls
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                const vid = slide.querySelector('video');
+                if (i === index) {
+                    slide.classList.remove('opacity-0');
+                    slide.classList.add('opacity-100');
+                    if (vid) vid.play();
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0');
+                    if (vid) vid.pause();
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto rotate hero slides every 6 seconds
+        setInterval(nextSlide, 6000);
+        showSlide(0);
+
+        // Modal Controls
+        function openModal() {
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        function openLightbox(title, desc) {
+            document.getElementById('lightbox-title').innerText = title;
+            document.getElementById('lightbox-desc').innerText = desc;
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
