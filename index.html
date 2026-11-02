@@ -84,13 +84,123 @@
           font-weight: 800;
         }
 
+        @keyframes bgGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes floatOrb1 {
+            0%, 100% {
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translate(90px, -110px) scale(1.2) rotate(120deg);
+            }
+            66% {
+                transform: translate(-80px, 90px) scale(0.85) rotate(240deg);
+            }
+        }
+
+        @keyframes floatOrb2 {
+            0%, 100% {
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translate(-110px, 90px) scale(1.15) rotate(120deg);
+            }
+            66% {
+                transform: translate(90px, -100px) scale(0.9) rotate(240deg);
+            }
+        }
+
+        @keyframes floatOrb3 {
+            0%, 100% {
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translate(100px, 90px) scale(1.25) rotate(180deg);
+            }
+            66% {
+                transform: translate(-90px, -80px) scale(0.85) rotate(360deg);
+            }
+        }
+
         body {
-            background-color: #030304;
+            background-color: #030305;
             color: #ffffff;
             font-family: 'Vastago', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
             font-weight: 600;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        /* Subtle Motion Animated Background Layer - predominantly black with a hint of grayish-purple */
+        .ambient-bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+            background: #030305;
+        }
+
+        .ambient-gradient-mesh {
+            position: absolute;
+            inset: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle at 50% 15%, rgba(65, 55, 75, 0.22) 0%, transparent 60%),
+                              radial-gradient(circle at 85% 75%, rgba(45, 40, 55, 0.16) 0%, transparent 55%),
+                              radial-gradient(circle at 15% 85%, rgba(35, 30, 48, 0.14) 0%, transparent 55%);
+            background-size: 200% 200%;
+            animation: bgGradientShift 45s ease infinite;
+            opacity: 0.85;
+        }
+
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.12;
+            will-change: transform;
+        }
+
+        .orb-1 {
+            width: 700px;
+            height: 700px;
+            background: rgba(95, 80, 115, 0.35);
+            top: 10%;
+            left: 15%;
+            animation: floatOrb1 38s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 800px;
+            height: 800px;
+            background: rgba(75, 65, 95, 0.3);
+            top: 45%;
+            right: 10%;
+            animation: floatOrb2 42s ease-in-out infinite;
+        }
+
+        .orb-3 {
+            width: 650px;
+            height: 650px;
+            background: rgba(110, 95, 130, 0.25);
+            bottom: 5%;
+            left: 25%;
+            animation: floatOrb3 40s ease-in-out infinite;
         }
 
         /* Cinematic Intro Keyframes & Scroll Animation Classes */
@@ -198,6 +308,14 @@
 </head>
 <body class="bg-bgPure text-white selection:bg-white selection:text-black">
 
+    <!-- Ambient Subtle Motion Background Container -->
+    <div class="ambient-bg-layer">
+        <div class="ambient-gradient-mesh"></div>
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+        <div class="ambient-orb orb-3"></div>
+    </div>
+
     <header class="absolute top-0 left-0 right-0 z-50 bg-transparent animate-intro-header py-6">
         <div class="max-w-[1450px] mx-auto px-4 sm:px-6 flex items-center justify-between">
             
@@ -298,8 +416,8 @@
             <div class="max-w-[900px] space-y-6 relative z-30 pointer-events-auto animate-intro-text pl-0 sm:pl-0" style="margin-top: 50px;">
                     <h1 class="text-4xl sm:text-[85px] xl:text-[110px] font-semibold tracking-tight text-white leading-[0.88] select-none flex flex-col">
                         <span class="block text-white">Build.</span>
-                        <span class="block pl-20 sm:pl-40 text-white">Launch.</span>
-                        <span class="block pl-40 sm:pl-[280px] text-gray-400">Convert.</span>
+                        <span class="block pl-20 sm:pl-40 text-gray-400">Launch.</span>
+                        <span class="block pl-40 sm:pl-[280px] text-white [text-shadow:_0_0_15px_rgba(255,255,255,0.35),_0_0_30px_rgba(255,255,255,0.15)]">Convert.</span>
                     </h1>
 
                     <div class="max-w-[450px] space-y-3 pt-4 pl-1">
@@ -318,11 +436,11 @@
         <div class="max-w-[1400px] mx-auto px-3 sm:px-6 relative z-30 pointer-events-auto flex justify-end -mt-[164px] mb-24">
             <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-pill bg-[#0a0a0c]/80 border border-white/10 shadow-lg cursor-default select-none">
                 <span class="relative flex h-2.5 w-2.5">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 shadow-[0_0_10px_#ef4444]"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600 shadow-[0_0_8px_#ef4444]"></span>
                 </span>
                 <span class="text-xs font-semibold text-white tracking-wide">4 spots left</span>
-                <span class="text-xs font-mono text-gray-400 tracking-widest">NOVEMBER</span>
+                <span class="text-xs font-mono font-normal tracking-wider text-gray-400">NOVEMBER</span>
             </div>
         </div>
 
