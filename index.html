@@ -1,3 +1,4 @@
+<!-- ... eslint-disable -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -35,6 +36,67 @@
             font-family: 'Vastago Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* Cinematic Intro Keyframes & Scroll Animation Classes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .animate-intro-header {
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-intro-text {
+            animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+            opacity: 0;
+        }
+
+        .animate-intro-carousel {
+            animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+            opacity: 0;
+        }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .glass-pill {
@@ -76,14 +138,14 @@
 </head>
 <body class="bg-bgPure text-white selection:bg-white selection:text-black">
 
-    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent animate-intro-header">
         <div class="max-w-[1400px] mx-auto px-6 sm:px-10 h-28 flex items-center justify-between">
             <!-- Brand Logo with Continuous 360 Rotation Animation (3s duration) & Name Text -->
-            <a href="#" class="flex items-center gap-1 group">
+            <a href="#" class="flex items-center group">
                 <div class="w-12 h-12 flex items-center justify-center overflow-hidden [animation:spin_3s_linear_infinite] z-10">
                     <img src="https://i.ibb.co/0jKnCvdd/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" style="filter: none;" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
                 </div>
-                <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Iterations</span>
+                <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white -ml-1">Iterations</span>
             </a>
 
             <!-- Navigation Links -->
@@ -104,7 +166,7 @@
     <main>
         <!-- Decoupled Hero Sections -->
         <!-- Parallax Hero Video Carousel Container (Positioned independently in the background) -->
-        <div class="absolute top-44 right-4 lg:right-16 w-full max-w-[616px] flex flex-col items-center justify-center py-4 px-6 opacity-85 hover:opacity-100 transition-opacity z-10 pointer-events-auto" id="hero-carousel-container">
+        <div class="absolute top-44 right-4 lg:right-16 w-full max-w-[614px] flex flex-col items-center justify-center py-4 px-6 opacity-85 hover:opacity-100 transition-opacity z-10 pointer-events-auto animate-intro-carousel" id="hero-carousel-container">
             <div class="relative w-full aspect-[16/9] flex items-center justify-center perspective-[1400px]" style="perspective: 1400px;">
                 
                 <!-- Carousel Deck Wrapper -->
@@ -112,7 +174,7 @@
                         
                         <!-- Card 1: Sendr -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="0" onclick="handleCardClick(0)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&mute=1&loop=1&playlist=75KbxI2S4pk&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Sendr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&mute=1&loop=1&playlist=75KbxI2S4pk&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Sendr / Product Walkthrough</span>
@@ -122,7 +184,7 @@
 
                         <!-- Card 2: Dots -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="1" onclick="handleCardClick(1)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Dots" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Dots / Explainer Story</span>
@@ -132,7 +194,7 @@
 
                         <!-- Card 3: NoodleSeed -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="2" onclick="handleCardClick(2)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&mute=1&loop=1&playlist=3m4XFdXHmlo&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="NoodleSeed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&mute=1&loop=1&playlist=3m4XFdXHmlo&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">NoodleSeed / UI Motion</span>
@@ -142,7 +204,7 @@
 
                         <!-- Card 4: Accordio -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="3" onclick="handleCardClick(3)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&mute=1&loop=1&playlist=VQsxawVVMFs&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Accordio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&mute=1&loop=1&playlist=VQsxawVVMFs&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Accordio / Release Keynote</span>
@@ -152,7 +214,7 @@
 
                         <!-- Card 5: Cerenovus -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="4" onclick="handleCardClick(4)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&mute=1&loop=1&playlist=VuDjroGZzNU&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Cerenovus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&mute=1&loop=1&playlist=VuDjroGZzNU&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Cerenovus / Interface Choreography</span>
@@ -162,7 +224,7 @@
 
                         <!-- Card 6: Kuli -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="5" onclick="handleCardClick(5)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&mute=1&loop=1&playlist=hj-pSumbqWo&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Kuli" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&mute=1&loop=1&playlist=hj-pSumbqWo&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Kuli / Feature Explainer</span>
@@ -172,7 +234,7 @@
 
                         <!-- Card 7: Luncent -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="6" onclick="handleCardClick(6)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&mute=1&loop=1&playlist=-ulDYbFotRI&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Luncent" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&mute=1&loop=1&playlist=-ulDYbFotRI&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Luncent / Onboarding Motion</span>
@@ -182,7 +244,7 @@
 
                         <!-- Card 8: OrangeSlice -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="7" onclick="handleCardClick(7)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&mute=1&loop=1&playlist=aCJgZO1FHDQ&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="OrangeSlice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&mute=1&loop=1&playlist=aCJgZO1FHDQ&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">OrangeSlice / Update Teaser</span>
@@ -192,7 +254,7 @@
 
                         <!-- Card 9: Claude -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="8" onclick="handleCardClick(8)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/FK_kUYttvW4?autoplay=1&mute=1&loop=1&playlist=FK_kUYttvW4&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Claude" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/FK_kUYttvW4?autoplay=1&mute=1&loop=1&playlist=FK_kUYttvW4&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Claude / Flagship Cinematic Launch</span>
@@ -202,7 +264,7 @@
 
                         <!-- Card 10: Revnu -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="9" onclick="handleCardClick(9)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&mute=1&loop=1&playlist=PbYdYV2LYVo&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Revnu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&mute=1&loop=1&playlist=PbYdYV2LYVo&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Revnu / Product Tour</span>
@@ -212,7 +274,7 @@
 
                         <!-- Card 11: Reacher -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="10" onclick="handleCardClick(10)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&mute=1&loop=1&playlist=OAWQ0qWBaug&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Reacher" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&mute=1&loop=1&playlist=OAWQ0qWBaug&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Reacher / Enterprise Launch</span>
@@ -222,7 +284,7 @@
 
                         <!-- Card 12: Octri -->
                         <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="11" onclick="handleCardClick(11)">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&mute=1&loop=1&playlist=DyaNW3W_AK8&controls=0&showinfo=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3&enablejsapi=1" title="Octri" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&mute=1&loop=1&playlist=DyaNW3W_AK8&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Octri / Kinetic Design System</span>
@@ -258,7 +320,7 @@
         <!-- Hero Text Section -->
         <section class="relative pt-[152px] sm:pt-[184px] pb-32 max-w-[1400px] mx-auto px-6 sm:px-10 z-30 pointer-events-none">
             <!-- Hero Text Container -->
-            <div class="max-w-[850px] space-y-6 relative z-30 pointer-events-auto">
+            <div class="max-w-[850px] space-y-6 relative z-30 pointer-events-auto animate-intro-text" style="margin-top: 20px;">
                     <h1 class="text-7xl sm:text-[120px] xl:text-[150px] font-black tracking-tight text-white leading-[0.88] select-none flex flex-col">
                         <span class="block">Build.</span>
                         <span class="block pl-12 sm:pl-20">Launch.</span>
@@ -279,7 +341,7 @@
 
         <!-- Display Videos Section (12 precise videos with product names) -->
         <section id="work" class="max-w-[1400px] mx-auto px-6 sm:px-10 py-32 border-t border-white/[0.06]">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal-on-scroll">
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Selected Works</span>
                     <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">Recent projects</h2>
@@ -289,7 +351,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 1. Sendr -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Sendr', 'Product walkthrough video showcasing Sendr.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Sendr', 'Product walkthrough video showcasing Sendr.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/75KbxI2S4pk/hqdefault.jpg" alt="Sendr" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -307,7 +369,7 @@
                 </div>
 
                 <!-- 2. Dots -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Dots', 'Explainer video platform.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Dots', 'Explainer video platform.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/PBecnjxvsnA/hqdefault.jpg" alt="Dots" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -325,7 +387,7 @@
                 </div>
 
                 <!-- 3. NoodleSeed -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'NoodleSeed', 'Motion design and UI animation showcase.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'NoodleSeed', 'Motion design and UI animation showcase.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/3m4XFdXHmlo/hqdefault.jpg" alt="NoodleSeed" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -343,7 +405,7 @@
                 </div>
 
                 <!-- 4. Accordio -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Accordio', 'Cinematic software launch showcase.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Accordio', 'Cinematic software launch showcase.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/VQsxawVVMFs/hqdefault.jpg" alt="Accordio" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -361,7 +423,7 @@
                 </div>
 
                 <!-- 5. Cerenovus -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Cerenovus', 'Interactive walkthrough and motion graphics.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Cerenovus', 'Interactive walkthrough and motion graphics.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/VuDjroGZzNU/hqdefault.jpg" alt="Cerenovus" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -379,7 +441,7 @@
                 </div>
 
                 <!-- 6. Kuli -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Kuli', 'Feature explainer animation system.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Kuli', 'Feature explainer animation system.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/hj-pSumbqWo/hqdefault.jpg" alt="Kuli" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -397,7 +459,7 @@
                 </div>
 
                 <!-- 7. Luncent -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Luncent', 'Product onboarding and launch video.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Luncent', 'Product onboarding and launch video.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/-ulDYbFotRI/hqdefault.jpg" alt="Luncent" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -415,7 +477,7 @@
                 </div>
 
                 <!-- 8. OrangeSlice -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'OrangeSlice', 'Cinematic software update launch.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'OrangeSlice', 'Cinematic software update launch.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/aCJgZO1FHDQ/hqdefault.jpg" alt="OrangeSlice" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -433,7 +495,7 @@
                 </div>
 
                 <!-- 9. Claude -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/FK_kUYttvW4?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Claude', 'Cinematic product launch film for Claude.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/FK_kUYttvW4?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Claude', 'Cinematic product launch film for Claude.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/FK_kUYttvW4/hqdefault.jpg" alt="Claude" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -451,7 +513,7 @@
                 </div>
 
                 <!-- 10. Revnu -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Revnu', 'High conversion product tour demo.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Revnu', 'High conversion product tour demo.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/PbYdYV2LYVo/hqdefault.jpg" alt="Revnu" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -469,7 +531,7 @@
                 </div>
 
                 <!-- 11. Reacher -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Reacher', 'Enterprise software launch film.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Reacher', 'Enterprise software launch film.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/OAWQ0qWBaug/hqdefault.jpg" alt="Reacher" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -487,7 +549,7 @@
                 </div>
 
                 <!-- 12. Octri -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Octri', 'Kinetic UI and design system showcase.')">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Octri', 'Kinetic UI and design system showcase.')">
                     <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/DyaNW3W_AK8/hqdefault.jpg" alt="Octri" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
@@ -632,18 +694,18 @@
                 scheduleNextSpin();
             } else {
                 const videoUrls = [
-                    'https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/FK_kUYttvW4?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3',
-                    'https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3'
+                    'https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/FK_kUYttvW4?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&rel=0',
+                    'https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&rel=0'
                 ];
                 const titles = ['Sendr', 'Dots', 'NoodleSeed', 'Accordio', 'Cerenovus', 'Kuli', 'Luncent', 'OrangeSlice', 'Claude', 'Revnu', 'Reacher', 'Octri'];
                 openVideoModal(videoUrls[index], titles[index], 'Iteration Studios Portfolio Showcase');
@@ -729,6 +791,28 @@
             if (e.target.id === 'video-modal') {
                 closeVideoModal();
             }
+        });
+
+        // Intersection Observer for Scroll Entry Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observerInstance) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observerInstance.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
