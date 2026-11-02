@@ -78,9 +78,9 @@
 
     <header class="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <div class="max-w-[1400px] mx-auto px-6 sm:px-10 h-28 flex items-center justify-between">
-            <!-- Brand Logo with Continuous 360 Rotation Animation & Name Text -->
-            <a href="#" class="flex items-center gap-0.5 group">
-                <div class="w-12 h-12 flex items-center justify-center overflow-hidden [animation:spin_6s_linear_infinite] z-10">
+            <!-- Brand Logo with Continuous 360 Rotation Animation (3s duration) & Name Text -->
+            <a href="#" class="flex items-center gap-1 group">
+                <div class="w-12 h-12 flex items-center justify-center overflow-hidden [animation:spin_3s_linear_infinite] z-10">
                     <img src="https://i.ibb.co/0jKnCvdd/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" style="filter: none;" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
                 </div>
                 <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Iterations</span>
@@ -566,10 +566,10 @@
 
         updatePhysicalCarousel();
 
-        let carouselInterval = setInterval(nextPhysicalSlide, 5000);
+        let carouselInterval = setInterval(nextPhysicalSlide, 3000);
         deck.addEventListener('mouseenter', () => clearInterval(carouselInterval));
         deck.addEventListener('mouseleave', () => {
-            carouselInterval = setInterval(nextPhysicalSlide, 5000);
+            carouselInterval = setInterval(nextPhysicalSlide, 3000);
         });
 
         // Video Modal Lightbox Logic
