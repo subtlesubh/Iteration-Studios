@@ -522,7 +522,8 @@
 
         function scheduleNextSpin() {
             if (carouselTimer) clearTimeout(carouselTimer);
-            const randomInterval = Math.floor(Math.random() * (9000 - 5000 + 1)) + 5000;
+            // Randomized interval between 3 to 6 seconds (3000ms to 6000ms)
+            const randomInterval = Math.floor(Math.random() * (6000 - 3000 + 1)) + 3000;
             carouselTimer = setTimeout(() => {
                 nextPhysicalSlide(false);
                 scheduleNextSpin();
