@@ -125,13 +125,13 @@
                     </div>
                 </div>
 
-                <!-- Right Column: 3 YouTube Videos in Hero Carousel (Aspect Ratio 16:9 standard YouTube) -->
+                <!-- Right Column: 3 YouTube Videos in Hero Carousel (Aspect Ratio 16:9 standard YouTube) with Captions Disabled & Titles Hidden -->
                 <div class="lg:col-span-6 relative w-full flex items-center justify-center">
                     <div id="hero-video-carousel" class="relative w-full rounded-3xl overflow-hidden border border-white/15 bg-cardDark shadow-2xl group" style="aspect-ratio: 16 / 9; min-height: 280px;">
                         
                         <!-- Slide 1: flRxnaGPL4w (Product: Grok) -->
                         <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center justify-center">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/flRxnaGPL4w?autoplay=1&mute=1&loop=1&playlist=flRxnaGPL4w&controls=0&showinfo=0&vq=hd1080&hd=1" title="Grok" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/flRxnaGPL4w?autoplay=1&mute=1&loop=1&playlist=flRxnaGPL4w&controls=0&showinfo=0&modestbranding=1&cc_load_policy=0&vq=hd1080&hd=1" title="Grok" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Grok / Cinematic Launch</span>
@@ -141,7 +141,7 @@
 
                         <!-- Slide 2: JR8Z5yXg2-Q (Product: Lovable) -->
                         <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/JR8Z5yXg2-Q?autoplay=1&mute=1&loop=1&playlist=JR8Z5yXg2-Q&controls=0&showinfo=0&vq=hd1080&hd=1" title="Lovable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/JR8Z5yXg2-Q?autoplay=1&mute=1&loop=1&playlist=JR8Z5yXg2-Q&controls=0&showinfo=0&modestbranding=1&cc_load_policy=0&vq=hd1080&hd=1" title="Lovable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Lovable / Product Walkthrough</span>
@@ -151,7 +151,7 @@
 
                         <!-- Slide 3: PBecnjxvsnA (Product: Kimi) -->
                         <div class="carousel-slide absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
-                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&showinfo=0&vq=hd1080&hd=1" title="Kimi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&mute=1&loop=1&playlist=PBecnjxvsnA&controls=0&showinfo=0&modestbranding=1&cc_load_policy=0&vq=hd1080&hd=1" title="Kimi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
                             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                                 <span class="px-3 py-1 rounded-full glass-pill text-[10px] sm:text-xs font-mono text-white">Kimi / Explainer Story</span>
@@ -169,7 +169,7 @@
             </div>
         </section>
 
-        <!-- Display Videos Section (12 precise videos with product names) -->
+        <!-- Display Videos Section (12 videos with custom play buttons that load video on demand) -->
         <section id="work" class="max-w-[1400px] mx-auto px-6 sm:px-10 py-32 border-t border-white/[0.06]">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                 <div>
@@ -181,10 +181,14 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 1. Grok -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/flRxnaGPL4w?autoplay=1&vq=hd1080&hd=1', 'Grok', 'Cinematic product launch film for Grok.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/flRxnaGPL4w?controls=0&vq=hd1080&hd=1" title="Grok"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">01 / 12</div>
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-0">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" alt="Grok" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-0', 'flRxnaGPL4w', 'Grok')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">01 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -195,10 +199,14 @@
                 </div>
 
                 <!-- 2. Lovable -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/JR8Z5yXg2-Q?autoplay=1&vq=hd1080&hd=1', 'Lovable', 'Product demo video showcasing Lovable.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/JR8Z5yXg2-Q?controls=0&vq=hd1080&hd=1" title="Lovable"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">02 / 12</div>
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-1">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop" alt="Lovable" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-1', 'JR8Z5yXg2-Q', 'Lovable')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">02 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -209,10 +217,14 @@
                 </div>
 
                 <!-- 3. Kimi -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&vq=hd1080&hd=1', 'Kimi', 'Explainer video for Kimi AI platform.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PBecnjxvsnA?controls=0&vq=hd1080&hd=1" title="Kimi"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">03 / 12</div>
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-2">
+                        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1200&auto=format&fit=crop" alt="Kimi" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-2', 'PBecnjxvsnA', 'Kimi')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">03 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -222,11 +234,15 @@
                     </div>
                 </div>
 
-                <!-- 4. Video 4 (3m4XFdXHmlo) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&vq=hd1080&hd=1', 'Product Four', 'Motion design and UI animation showcase.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/3m4XFdXHmlo?controls=0&vq=hd1080&hd=1" title="Product Four"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">04 / 12</div>
+                <!-- 4. Product Four -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-3">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" alt="Product Four" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-3', '3m4XFdXHmlo', 'Product Four')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">04 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -236,11 +252,15 @@
                     </div>
                 </div>
 
-                <!-- 5. Video 5 (VQsxawVVMFs) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&vq=hd1080&hd=1', 'Product Five', 'Cinematic software launch showcase.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/VQsxawVVMFs?controls=0&vq=hd1080&hd=1" title="Product Five"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">05 / 12</div>
+                <!-- 5. Product Five -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-4">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" alt="Product Five" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-4', 'VQsxawVVMFs', 'Product Five')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">05 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -250,11 +270,15 @@
                     </div>
                 </div>
 
-                <!-- 6. Video 6 (VuDjroGZzNU) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&vq=hd1080&hd=1', 'Product Six', 'Interactive walkthrough and motion graphics.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/VuDjroGZzNU?controls=0&vq=hd1080&hd=1" title="Product Six"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">06 / 12</div>
+                <!-- 6. Product Six -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-5">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop" alt="Product Six" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-5', 'VuDjroGZzNU', 'Product Six')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">06 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -264,11 +288,15 @@
                     </div>
                 </div>
 
-                <!-- 7. Video 7 (hj-pSumbqWo) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&vq=hd1080&hd=1', 'Product Seven', 'Feature explainer animation system.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/hj-pSumbqWo?controls=0&vq=hd1080&hd=1" title="Product Seven"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">07 / 12</div>
+                <!-- 7. Product Seven -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-6">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop" alt="Product Seven" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-6', 'hj-pSumbqWo', 'Product Seven')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">07 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -278,11 +306,15 @@
                     </div>
                 </div>
 
-                <!-- 8. Video 8 (-ulDYbFotRI) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&vq=hd1080&hd=1', 'Product Eight', 'Product onboarding and launch video.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/-ulDYbFotRI?controls=0&vq=hd1080&hd=1" title="Product Eight"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">08 / 12</div>
+                <!-- 8. Product Eight -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-7">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Product Eight" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-7', '-ulDYbFotRI', 'Product Eight')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">08 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -292,11 +324,15 @@
                     </div>
                 </div>
 
-                <!-- 9. Video 9 (aCJgZO1FHDQ) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&vq=hd1080&hd=1', 'Product Nine', 'Cinematic software update launch.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/aCJgZO1FHDQ?controls=0&vq=hd1080&hd=1" title="Product Nine"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">09 / 12</div>
+                <!-- 9. Product Nine -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-8">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" alt="Product Nine" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-8', 'aCJgZO1FHDQ', 'Product Nine')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">09 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -306,11 +342,15 @@
                     </div>
                 </div>
 
-                <!-- 10. Video 10 (PbYdYV2LYVo) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&vq=hd1080&hd=1', 'Product Ten', 'High conversion product tour demo.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/PbYdYV2LYVo?controls=0&vq=hd1080&hd=1" title="Product Ten"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">10 / 12</div>
+                <!-- 10. Product Ten -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-9">
+                        <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1200&auto=format&fit=crop" alt="Product Ten" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-9', 'PbYdYV2LYVo', 'Product Ten')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">10 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -320,11 +360,15 @@
                     </div>
                 </div>
 
-                <!-- 11. Video 11 (OAWQ0qWBaug) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&vq=hd1080&hd=1', 'Product Eleven', 'Enterprise software launch film.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/OAWQ0qWBaug?controls=0&vq=hd1080&hd=1" title="Product Eleven"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">11 / 12</div>
+                <!-- 11. Product Eleven -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-10">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" alt="Product Eleven" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-10', 'OAWQ0qWBaug', 'Product Eleven')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">11 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -334,11 +378,15 @@
                     </div>
                 </div>
 
-                <!-- 12. Video 12 (DyaNW3W_AK8) -->
-                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer" onclick="openVideoModal('https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&vq=hd1080&hd=1', 'Product Twelve', 'Kinetic UI and design system showcase.')">
-                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center">
-                        <iframe class="w-full h-full pointer-events-none" src="https://www.youtube.com/embed/DyaNW3W_AK8?controls=0&vq=hd1080&hd=1" title="Product Twelve"></iframe>
-                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">12 / 12</div>
+                <!-- 12. Product Twelve -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-4 flex items-center justify-center video-card-wrapper" id="video-card-11">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop" alt="Product Twelve" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <button onclick="loadAndPlayVideo('video-card-11', 'DyaNW3W_AK8', 'Product Twelve')" class="relative z-10 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300 z-10">12 / 12</div>
                     </div>
                     <div class="flex items-center justify-between px-2 pb-1">
                         <div>
@@ -451,20 +499,9 @@
         setInterval(nextSlide, 6000);
         showSlide(0);
 
-        function openVideoModal(iframeSrc, title, desc) {
-            document.getElementById('lightbox-title').innerText = title;
-            document.getElementById('lightbox-desc').innerText = desc;
-            document.getElementById('lightbox-container').innerHTML = `<iframe class="w-full h-full" src="${iframeSrc}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-            document.getElementById('lightbox-modal').classList.remove('hidden');
-        }
-
-        function openLightbox(title, desc) {
-            openVideoModal('https://www.youtube.com/embed/flRxnaGPL4w?autoplay=1&vq=hd1080&hd=1', title, desc);
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox-modal').classList.add('hidden');
-            document.getElementById('lightbox-container').innerHTML = '';
+        function loadAndPlayVideo(containerId, videoId, title) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube.com/embed/${videoId}?autoplay=1&showinfo=0&modestbranding=1&cc_load_policy=0&vq=hd1080&hd=1" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         }
     </script>
 </body>
