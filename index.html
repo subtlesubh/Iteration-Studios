@@ -1,3 +1,4 @@
+<!-- ... eslint-disable -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -34,41 +35,49 @@
           src: url('/fonts/VastagoGrotesk-Thin.otf') format('opentype');
           font-weight: 100;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-ExtraLight.otf') format('opentype');
           font-weight: 200;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-Light.otf') format('opentype');
           font-weight: 300;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-Regular.otf') format('opentype');
           font-weight: 400;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-Medium.otf') format('opentype');
           font-weight: 500;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-SemiBold.otf') format('opentype');
           font-weight: 600;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-Bold.otf') format('opentype');
           font-weight: 700;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-Black.otf') format('opentype');
           font-weight: 900;
         }
+
         @font-face {
           font-family: 'Vastago';
           src: url('/fonts/VastagoGrotesk-Heavy.otf') format('opentype');
@@ -76,31 +85,51 @@
         }
 
         @keyframes bgGradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         @keyframes floatOrb1 {
-            0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
-            33% { transform: translate(50px, -60px) scale(1.15) rotate(120deg); }
-            66% { transform: translate(-40px, 50px) scale(0.85) rotate(240deg); }
+            0%, 100% {
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translate(90px, -110px) scale(1.2) rotate(120deg);
+            }
+            66% {
+                transform: translate(-80px, 90px) scale(0.85) rotate(240deg);
+            }
         }
 
         @keyframes floatOrb2 {
-            0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
-            33% { transform: translate(-60px, 50px) scale(1.1) rotate(120deg); }
-            66% { transform: translate(50px, -50px) scale(0.9) rotate(240deg); }
+            0%, 100% {
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translate(-110px, 90px) scale(1.15) rotate(120deg);
+            }
+            66% {
+                transform: translate(90px, -100px) scale(0.9) rotate(240deg);
+            }
         }
 
         @keyframes floatOrb3 {
-            0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
-            33% { transform: translate(60px, 50px) scale(1.2) rotate(180deg); }
-            66% { transform: translate(-50px, -40px) scale(0.85) rotate(360deg); }
-        }
-
-        * {
-            -webkit-tap-highlight-color: transparent;
+            0%, 100% {
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+            33% {
+                transform: translate(100px, 90px) scale(1.25) rotate(180deg);
+            }
+            66% {
+                transform: translate(-90px, -80px) scale(0.85) rotate(360deg);
+            }
         }
 
         body {
@@ -113,7 +142,7 @@
             position: relative;
         }
 
-        /* Ambient Motion Background Layer */
+        /* Subtle Motion Animated Background Layer - predominantly black with a hint of grayish-purple */
         .ambient-bg-layer {
             position: fixed;
             top: 0;
@@ -142,61 +171,70 @@
         .ambient-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.14;
+            filter: blur(160px);
+            opacity: 0.12;
             will-change: transform;
         }
 
         .orb-1 {
-            width: 320px;
-            height: 320px;
-            background: rgba(95, 80, 115, 0.4);
+            width: 700px;
+            height: 700px;
+            background: rgba(95, 80, 115, 0.35);
             top: 10%;
-            left: 5%;
+            left: 15%;
             animation: floatOrb1 38s ease-in-out infinite;
-        }
-        @media (min-width: 768px) {
-            .orb-1 { width: 700px; height: 700px; filter: blur(160px); }
         }
 
         .orb-2 {
-            width: 350px;
-            height: 350px;
-            background: rgba(75, 65, 95, 0.35);
+            width: 800px;
+            height: 800px;
+            background: rgba(75, 65, 95, 0.3);
             top: 45%;
-            right: 5%;
+            right: 10%;
             animation: floatOrb2 42s ease-in-out infinite;
-        }
-        @media (min-width: 768px) {
-            .orb-2 { width: 800px; height: 800px; filter: blur(160px); }
         }
 
         .orb-3 {
-            width: 300px;
-            height: 300px;
-            background: rgba(110, 95, 130, 0.3);
+            width: 650px;
+            height: 650px;
+            background: rgba(110, 95, 130, 0.25);
             bottom: 5%;
-            left: 15%;
+            left: 25%;
             animation: floatOrb3 40s ease-in-out infinite;
         }
-        @media (min-width: 768px) {
-            .orb-3 { width: 650px; height: 650px; filter: blur(160px); }
-        }
 
-        /* Animations */
+        /* Cinematic Intro Keyframes & Scroll Animation Classes */
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-15px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.96) translateY(15px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         .animate-intro-header {
@@ -204,19 +242,19 @@
         }
 
         .animate-intro-text {
-            animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+            animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
             opacity: 0;
         }
 
         .animate-intro-carousel {
-            animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+            animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
             opacity: 0;
         }
 
-        /* Scroll Reveal */
+        /* Scroll Reveal Utility Classes */
         .reveal-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
@@ -227,14 +265,14 @@
         }
 
         .glass-pill {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
 
         .glass-panel {
-            background: rgba(12, 12, 15, 0.65);
+            background: rgba(12, 12, 15, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -243,19 +281,18 @@
         .hover-card-glow {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        @media (hover: hover) {
-            .hover-card-glow:hover {
-                border-color: rgba(255, 255, 255, 0.25);
-                transform: translateY(-4px);
-            }
+        .hover-card-glow:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
         }
 
+        /* Butter-smooth carousel physical card transition */
         .carousel-physical-card {
-            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         ::-webkit-scrollbar {
-            width: 5px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #030304;
@@ -271,7 +308,7 @@
 </head>
 <body class="bg-bgPure text-white selection:bg-white selection:text-black">
 
-    <!-- Ambient Background Container -->
+    <!-- Ambient Subtle Motion Background Container -->
     <div class="ambient-bg-layer">
         <div class="ambient-gradient-mesh"></div>
         <div class="ambient-orb orb-1"></div>
@@ -279,49 +316,112 @@
         <div class="ambient-orb orb-3"></div>
     </div>
 
-    <!-- Transparent Header with Logo Only on the Left -->
-    <header class="w-full z-50 bg-transparent animate-intro-header py-6">
+    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent animate-intro-header py-6">
         <div class="max-w-[1450px] mx-auto px-4 sm:px-6 flex items-center justify-between">
             
-            <!-- Left: Studio Logo Only (Cleaned up: smaller, no background circle) -->
-            <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="flex items-center group" aria-label="Iterations Home">
-                <div class="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center overflow-hidden [animation:spin_3s_linear_infinite]">
-                    <img src="https://i.ibb.co/LjrTS2K/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
-                </div>
-            </a>
+            <!-- Left: Empty or spacer balance -->
+            <div class="w-[180px] hidden lg:block"></div>
 
-            <!-- Center Navigation Pill (Desktop) -->
-            <nav class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full glass-pill text-xs font-normal text-gray-300 tracking-wide border border-white/10">
-                <a href="#work" class="px-4 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all">Work</a>
-                <a href="#services" class="px-4 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all">Services</a>
-                <a href="#process" class="px-4 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all">Process</a>
-                <a href="#about" class="px-4 py-1 rounded-full hover:text-white hover:bg-white/10 transition-all">About</a>
+            <!-- Center: Navigation Pill Container with Logo on Left -->
+            <nav class="hidden md:flex items-center gap-2 px-3 py-2 rounded-full glass-pill text-sm font-normal text-gray-300 tracking-wide bg-[#0a0a0c]/80 border border-white/10 mx-auto">
+                <!-- Logo inside center header -->
+                <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 transition-all mr-2">
+                    <div class="w-5 h-5 flex items-center justify-center overflow-hidden [animation:spin_3s_linear_infinite]">
+                        <img src="https://i.ibb.co/LjrTS2K/logo.png" alt="Iterations Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
+                    </div>
+                </a>
+                <a href="#work" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Work</a>
+                <a href="#services" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Services</a>
+                <a href="#process" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">Process</a>
+                <a href="#about" class="px-5 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-all">About</a>
             </nav>
 
-            <!-- Right: Proposal CTA Button -->
-            <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full glass-pill text-xs sm:text-sm font-medium text-white/95 hover:bg-white hover:text-black transition-all duration-300 tracking-wider">
-                <svg class="w-3.5 h-3.5 text-gray-400 group-hover:text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <!-- Right: Get a Proposal Button (Pill with magnifying glass search style) -->
+            <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-6 py-2.5 rounded-full glass-pill text-sm font-medium text-white/95 hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] tracking-wider">
+                <svg class="w-4 h-4 text-gray-400 group-hover:text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <span>Get a Proposal</span>
             </a>
         </div>
     </header>
 
-    <main class="relative z-10">
-
-        <!-- Responsive Hero Section -->
-        <section class="relative pt-4 sm:pt-10 pb-16 max-w-[1400px] mx-auto px-4 sm:px-6">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-6">
+    <main>
+        <!-- Decoupled Hero Sections -->
+        <!-- Parallax Hero Video Carousel Container (Moved further left and scaled down by 10%) -->
+        <div class="absolute top-44 right-6 lg:right-20 w-full max-w-[547px] flex flex-col items-center justify-center py-4 px-3 opacity-85 hover:opacity-100 transition-opacity z-10 pointer-events-auto animate-intro-carousel" id="hero-carousel-container">
+            <div class="relative w-full aspect-[16/9] flex items-center justify-center perspective-[1400px]" style="perspective: 1400px;">
                 
-                <!-- Left: Hero Text -->
-                <div class="w-full lg:max-w-[700px] space-y-6 text-center lg:text-left animate-intro-text">
-                    <h1 class="text-4xl sm:text-6xl xl:text-[90px] font-semibold tracking-tight text-white leading-[0.95] select-none flex flex-col items-center lg:items-start">
+                <!-- Carousel Deck Wrapper -->
+                <div id="carousel-deck" class="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none" style="transform-style: preserve-3d;">
+                        
+                        <!-- Card 1: Sendr (Cloudinary Embed) -->
+                        <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="0" onclick="handleCardClick(0)">
+                            <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=Sendr_1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Sendr / Product Walkthrough</span>
+                                <span class="text-xs font-mono text-gray-400">01 / 04</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Dots (Cloudinary Embed) -->
+                        <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="1" onclick="handleCardClick(1)">
+                            <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=Dots_v1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Dots / Explainer Story</span>
+                                <span class="text-xs font-mono text-gray-400">02 / 04</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Accordio (Cloudinary Embed) -->
+                        <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="2" onclick="handleCardClick(2)">
+                            <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=Accordio_v1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">Accordio / Release Keynote</span>
+                                <span class="text-xs font-mono text-gray-400">03 / 04</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: NoodleSeed (Cloudinary Embed) -->
+                        <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white bg-cardDark shadow-2xl transition-all duration-500 ease-out" data-index="3" onclick="handleCardClick(3)">
+                            <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=NoodleSeed_v1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">NoodleSeed / UI Motion</span>
+                                <span class="text-xs font-mono text-gray-400">04 / 04</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Carousel Controls & Indicators -->
+                <div class="flex items-center gap-6 mt-6 z-20">
+                    <button onclick="prevPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">‹</button>
+                    <div class="flex items-center gap-1.5 overflow-x-auto max-w-[280px] py-1" id="carousel-dots">
+                        <button onclick="goToSlide(0)" class="w-2 h-2 rounded-full bg-white transition-all cursor-pointer flex-shrink-0" data-dot="0"></button>
+                        <button onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer flex-shrink-0" data-dot="1"></button>
+                        <button onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer flex-shrink-0" data-dot="2"></button>
+                        <button onclick="goToSlide(3)" class="w-2 h-2 rounded-full bg-white/30 transition-all cursor-pointer flex-shrink-0" data-dot="3"></button>
+                    </div>
+                    <button onclick="nextPhysicalSlide()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-sm cursor-pointer shadow-lg">›</button>
+                </div>
+                <p class="text-[11px] font-mono text-gray-500 mt-2">Click card to rotate or drag horizontally</p>
+        </div>
+
+        <!-- Hero Text Section (Left padding reduced by 50%) -->
+        <section class="relative pt-[142px] sm:pt-[174px] pb-32 max-w-[1400px] mx-auto px-1.5 sm:px-3 z-30 pointer-events-none">
+            <!-- Hero Text Container -->
+            <div class="max-w-[900px] space-y-6 relative z-30 pointer-events-auto animate-intro-text pl-0 sm:pl-0" style="margin-top: 50px;">
+                    <h1 class="text-4xl sm:text-[85px] xl:text-[110px] font-semibold tracking-tight text-white leading-[0.88] select-none flex flex-col">
                         <span class="block text-white">Build.</span>
-                        <span class="block lg:pl-24 text-gray-400">Launch.</span>
-                        <span class="block lg:pl-48 text-white [text-shadow:_0_0_15px_rgba(255,255,255,0.35),_0_0_30px_rgba(255,255,255,0.15)]">Convert.</span>
+                        <span class="block pl-20 sm:pl-40 text-gray-400">Launch.</span>
+                        <span class="block pl-40 sm:pl-[280px] text-white [text-shadow:_0_0_15px_rgba(255,255,255,0.35),_0_0_30px_rgba(255,255,255,0.15)]">Convert.</span>
                     </h1>
 
-                    <div class="max-w-[450px] mx-auto lg:mx-0 space-y-3 pt-2">
-                        <p class="text-sm sm:text-lg font-medium text-white tracking-tight leading-snug">
+                    <div class="max-w-[450px] space-y-3 pt-4 pl-1">
+                        <p class="text-base sm:text-xl font-medium text-white tracking-tight leading-snug">
                             Motion design for SaaS products that needs to be understood by a Modern World.
                         </p>
                         <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
@@ -329,290 +429,333 @@
                         </p>
                     </div>
                 </div>
+            </section>
+        </div>
 
-                <!-- Right: Mobile-Resized 3D Video Carousel -->
-                <div class="w-full max-w-[240px] xs:max-w-[270px] sm:max-w-[480px] lg:max-w-[520px] flex flex-col items-center justify-center animate-intro-carousel relative z-20" id="hero-carousel-container">
-                    <div class="relative w-full aspect-[16/9] flex items-center justify-center" style="perspective: 1200px;">
-                        
-                        <!-- Deck Wrapper -->
-                        <div id="carousel-deck" class="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none" style="transform-style: preserve-3d;">
-                                
-                            <!-- Card 1 -->
-                            <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl" data-index="0" onclick="handleCardClick(0)">
-                                <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=Sendr_1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-2.5 sm:bottom-4 left-3 right-3 flex items-center justify-between pointer-events-none">
-                                    <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full glass-pill text-[8px] sm:text-xs font-mono text-white">Sendr</span>
-                                    <span class="text-[8px] sm:text-xs font-mono text-gray-400">01 / 04</span>
-                                </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl" data-index="1" onclick="handleCardClick(1)">
-                                <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=Dots_v1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-2.5 sm:bottom-4 left-3 right-3 flex items-center justify-between pointer-events-none">
-                                    <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full glass-pill text-[8px] sm:text-xs font-mono text-white">Dots</span>
-                                    <span class="text-[8px] sm:text-xs font-mono text-gray-400">02 / 04</span>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl" data-index="2" onclick="handleCardClick(2)">
-                                <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=Accordio_v1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-2.5 sm:bottom-4 left-3 right-3 flex items-center justify-between pointer-events-none">
-                                    <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full glass-pill text-[8px] sm:text-xs font-mono text-white">Accordio</span>
-                                    <span class="text-[8px] sm:text-xs font-mono text-gray-400">03 / 04</span>
-                                </div>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="carousel-physical-card absolute w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 bg-cardDark shadow-2xl" data-index="3" onclick="handleCardClick(3)">
-                                <iframe class="w-full h-full pointer-events-none" src="https://player.cloudinary.com/embed/?cloud_name=knjejlgz&public_id=NoodleSeed_v1&profile=cld-looping" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-2.5 sm:bottom-4 left-3 right-3 flex items-center justify-between pointer-events-none">
-                                    <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full glass-pill text-[8px] sm:text-xs font-mono text-white">NoodleSeed</span>
-                                    <span class="text-[8px] sm:text-xs font-mono text-gray-400">04 / 04</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Carousel Controls & Indicators -->
-                    <div class="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-6 z-20">
-                        <button onclick="prevPhysicalSlide()" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-xs sm:text-sm cursor-pointer shadow-lg" aria-label="Previous slide">‹</button>
-                        <div class="flex items-center gap-1.5 overflow-x-auto max-w-[200px] py-1" id="carousel-dots">
-                            <button onclick="goToSlide(0)" class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white transition-all cursor-pointer flex-shrink-0" data-dot="0" aria-label="Slide 1"></button>
-                            <button onclick="goToSlide(1)" class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white/30 transition-all cursor-pointer flex-shrink-0" data-dot="1" aria-label="Slide 2"></button>
-                            <button onclick="goToSlide(2)" class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white/30 transition-all cursor-pointer flex-shrink-0" data-dot="2" aria-label="Slide 3"></button>
-                            <button onclick="goToSlide(3)" class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white/30 transition-all cursor-pointer flex-shrink-0" data-dot="3" aria-label="Slide 4"></button>
-                        </div>
-                        <button onclick="nextPhysicalSlide()" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-xs sm:text-sm cursor-pointer shadow-lg" aria-label="Next slide">›</button>
-                    </div>
-                    <p class="text-[10px] sm:text-[11px] font-mono text-gray-500 mt-1.5">Tap card to expand or swipe to rotate</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Availability Badge Positioned Upwards -->
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-30 pointer-events-auto flex justify-center lg:justify-end -mt-4 sm:-mt-8 mb-16 sm:mb-24">
-            <div class="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full glass-pill bg-[#0a0a0c]/80 border border-white/10 shadow-lg select-none">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+        <!-- Availability Badge: 4 spots left NOVEMBER with blinking dot (moved 40px further up) -->
+        <div class="max-w-[1400px] mx-auto px-3 sm:px-6 relative z-30 pointer-events-auto flex justify-end -mt-[164px] mb-24">
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-pill bg-[#0a0a0c]/80 border border-white/10 shadow-lg cursor-default select-none">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 shadow-[0_0_10px_#ef4444]"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600 shadow-[0_0_8px_#ef4444]"></span>
                 </span>
                 <span class="text-xs font-semibold text-white tracking-wide">4 spots left</span>
                 <span class="text-xs font-mono font-normal tracking-wider text-gray-400">NOVEMBER</span>
             </div>
         </div>
 
-        <!-- Portfolio Showcase -->
-        <section id="work" class="max-w-[1400px] mx-auto px-4 sm:px-6 py-16 sm:py-24 border-t border-white/[0.06]">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 reveal-on-scroll">
+        <!-- Display Videos Section (12 precise videos with product names) -->
+        <section id="work" class="max-w-[1400px] mx-auto px-3 sm:px-6 py-32 border-t border-white/[0.06]">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal-on-scroll">
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-gray-500">Selected Works</span>
-                    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight mt-2">Recent projects</h2>
+                    <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">Recent projects</h2>
                 </div>
-                <p class="text-gray-400 text-xs sm:text-sm max-w-md mt-3 md:mt-0 font-normal">Explore our curated showcase featuring product launches and motion systems.</p>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-normal">Explore our curated showcase featuring high-velocity product launches and motion systems.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 1. Sendr -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&rel=0', 'Sendr', 'Product walkthrough video showcasing Sendr.')">
-                    <div class="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-3 flex items-center justify-center">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/75KbxI2S4pk?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Sendr', 'Product walkthrough video showcasing Sendr.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/75KbxI2S4pk/hqdefault.jpg" alt="Sendr" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-                        <div class="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full glass-pill text-[9px] font-mono text-gray-300">01 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">01 / 12</div>
                     </div>
-                    <div class="flex items-center justify-between px-1 pb-1">
+                    <div class="flex items-center justify-between px-2 pb-1">
                         <div>
-                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Sendr</h3>
-                            <p class="text-xs text-gray-400 mt-0.5">Product Walkthrough Demo</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Sendr</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Product Walkthrough Demo</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. Dots -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&rel=0', 'Dots', 'Explainer video platform.')">
-                    <div class="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-3 flex items-center justify-center">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/PBecnjxvsnA?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Dots', 'Explainer video platform.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/PBecnjxvsnA/hqdefault.jpg" alt="Dots" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-                        <div class="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full glass-pill text-[9px] font-mono text-gray-300">02 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">02 / 12</div>
                     </div>
-                    <div class="flex items-center justify-between px-1 pb-1">
+                    <div class="flex items-center justify-between px-2 pb-1">
                         <div>
-                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Dots</h3>
-                            <p class="text-xs text-gray-400 mt-0.5">Explainer Story & Campaign</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Dots</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Explainer Story & Campaign</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. NoodleSeed -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&rel=0', 'NoodleSeed', 'Motion design and UI animation showcase.')">
-                    <div class="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-3 flex items-center justify-center">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/3m4XFdXHmlo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'NoodleSeed', 'Motion design and UI animation showcase.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/3m4XFdXHmlo/hqdefault.jpg" alt="NoodleSeed" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-                        <div class="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full glass-pill text-[9px] font-mono text-gray-300">03 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">03 / 12</div>
                     </div>
-                    <div class="flex items-center justify-between px-1 pb-1">
+                    <div class="flex items-center justify-between px-2 pb-1">
                         <div>
-                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gray-300 transition-colors">NoodleSeed</h3>
-                            <p class="text-xs text-gray-400 mt-0.5">UI Motion System</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">NoodleSeed</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">UI Motion System</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 4. Accordio -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&rel=0', 'Accordio', 'Cinematic software launch showcase.')">
-                    <div class="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-3 flex items-center justify-center">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/VQsxawVVMFs?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Accordio', 'Cinematic software launch showcase.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/VQsxawVVMFs/hqdefault.jpg" alt="Accordio" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-                        <div class="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full glass-pill text-[9px] font-mono text-gray-300">04 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">04 / 12</div>
                     </div>
-                    <div class="flex items-center justify-between px-1 pb-1">
+                    <div class="flex items-center justify-between px-2 pb-1">
                         <div>
-                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Accordio</h3>
-                            <p class="text-xs text-gray-400 mt-0.5">Release Keynote</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Accordio</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Release Keynote</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 5. Cerenovus -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&rel=0', 'Cerenovus', 'Interactive walkthrough and motion graphics.')">
-                    <div class="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-3 flex items-center justify-center">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/VuDjroGZzNU?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Cerenovus', 'Interactive walkthrough and motion graphics.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/VuDjroGZzNU/hqdefault.jpg" alt="Cerenovus" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-                        <div class="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full glass-pill text-[9px] font-mono text-gray-300">05 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">05 / 12</div>
                     </div>
-                    <div class="flex items-center justify-between px-1 pb-1">
+                    <div class="flex items-center justify-between px-2 pb-1">
                         <div>
-                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Cerenovus</h3>
-                            <p class="text-xs text-gray-400 mt-0.5">Interface Choreography</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Cerenovus</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Interface Choreography</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 6. Kuli -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&rel=0', 'Kuli', 'Feature explainer animation system.')">
-                    <div class="relative aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-cardDark border border-white/10 mb-3 flex items-center justify-center">
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/hj-pSumbqWo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Kuli', 'Feature explainer animation system.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
                         <img src="https://img.youtube.com/vi/hj-pSumbqWo/hqdefault.jpg" alt="Kuli" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-                        <div class="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                        <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full glass-pill text-[9px] font-mono text-gray-300">06 / 12</div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">06 / 12</div>
                     </div>
-                    <div class="flex items-center justify-between px-1 pb-1">
+                    <div class="flex items-center justify-between px-2 pb-1">
                         <div>
-                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Kuli</h3>
-                            <p class="text-xs text-gray-400 mt-0.5">Feature Explainer</p>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Kuli</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Feature Explainer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Luncent -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/-ulDYbFotRI?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Luncent', 'Product onboarding and launch video.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
+                        <img src="https://img.youtube.com/vi/-ulDYbFotRI/hqdefault.jpg" alt="Luncent" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">07 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Luncent</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Onboarding Motion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. OrangeSlice -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/aCJgZO1FHDQ?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'OrangeSlice', 'Cinematic software update launch.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
+                        <img src="https://img.youtube.com/vi/aCJgZO1FHDQ/hqdefault.jpg" alt="OrangeSlice" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">08 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">OrangeSlice</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Update Teaser</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Claude -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/FK_kUYttvW4?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Claude', 'Cinematic product launch film for Claude.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
+                        <img src="https://img.youtube.com/vi/FK_kUYttvW4/hqdefault.jpg" alt="Claude" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">09 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Claude</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Flagship Cinematic Launch</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Revnu -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/PbYdYV2LYVo?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Revnu', 'High conversion product tour demo.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
+                        <img src="https://img.youtube.com/vi/PbYdYV2LYVo/hqdefault.jpg" alt="Revnu" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">10 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Revnu</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Product Tour</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Reacher -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/OAWQ0qWBaug?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Reacher', 'Enterprise software launch film.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
+                        <img src="https://img.youtube.com/vi/OAWQ0qWBaug/hqdefault.jpg" alt="Reacher" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">11 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Reacher</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Enterprise Launch</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Octri -->
+                <div class="glass-panel rounded-3xl p-4 hover-card-glow group cursor-pointer reveal-on-scroll" onclick="openVideoModal('https://www.youtube.com/embed/DyaNW3W_AK8?autoplay=1&rel=0&cc_load_policy=0&iv_load_policy=3', 'Octri', 'Kinetic UI and design system showcase.')">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden bg-cardDark border border-white mb-4 flex items-center justify-center group-hover:border-white transition-colors">
+                        <img src="https://img.youtube.com/vi/DyaNW3W_AK8/hqdefault.jpg" alt="Octri" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute w-12 h-12 rounded-full glass-pill flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-2xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full glass-pill text-[10px] font-mono text-gray-300">12 / 12</div>
+                    </div>
+                    <div class="flex items-center justify-between px-2 pb-1">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">Octri</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Kinetic Design System</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="max-w-[1400px] mx-auto px-4 sm:px-6 py-20 sm:py-28 border-t border-white/[0.06]">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 reveal-on-scroll">
+        <!-- Services Section (Three ways to ship) -->
+        <section id="services" class="max-w-[1400px] mx-auto px-3 sm:px-6 py-32 border-t border-white/[0.06] relative">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal-on-scroll">
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-gray-500">WHAT WE OFFER</span>
-                    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight mt-2">Three ways to ship</h2>
+                    <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">Three ways to ship</h2>
                 </div>
-                <p class="text-gray-400 text-xs sm:text-sm max-w-xs mt-3 md:mt-0 font-light md:text-right">
-                    Fixed scopes, clear deliverables.
+                <p class="text-gray-400 text-xs sm:text-sm max-w-xs mt-4 md:mt-0 font-light text-right">
+                    Fixed scopes, clear deliverables. Click a card for the details.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Service Card 1 -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-card-glow reveal-on-scroll flex flex-col justify-between text-center relative overflow-hidden bg-[#07070a]/90 border border-white/10 group cursor-pointer" onclick="window.open('https://tally.so/r/dW6QjN', '_blank')">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Card 1: Product Demo -->
+                <div class="glass-panel rounded-3xl p-10 hover-card-glow reveal-on-scroll flex flex-col justify-between text-center relative overflow-hidden bg-[#07070a]/90 border border-white/10 group cursor-pointer min-h-[520px]" onclick="window.open('https://tally.so/r/dW6QjN', '_blank')">
                     <div>
-                        <div class="flex items-center justify-center gap-2 text-xs font-mono text-gray-400 mb-6">
+                        <div class="flex items-center justify-center gap-3 text-xs font-mono text-gray-400 mb-10">
                             <span>01</span>
                             <span>•</span>
-                            <span class="uppercase tracking-widest text-[9px]">PRODUCT PAGES</span>
+                            <span class="uppercase tracking-widest text-[10px]">PRODUCT PAGES & SALES</span>
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Product Demo</h3>
-                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed font-light mb-8">
-                            A focused walkthrough showing your software in motion.
+                        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">Product Demo</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed font-light mb-10 max-w-sm mx-auto">
+                            A focused walkthrough that shows the product in motion and makes the experience feel effortless.
                         </p>
                     </div>
 
-                    <div class="space-y-4 pt-4 border-t border-white/10 mt-auto">
-                        <ul class="space-y-1.5 text-[11px] font-mono text-gray-400">
-                            <li>30–45s screen demo</li>
-                            <li>5–7 days turnaround</li>
+                    <div class="space-y-6 pt-6 border-t border-white/10 mt-auto">
+                        <ul class="space-y-2 text-xs font-mono text-gray-400">
+                            <li>30–45s screen demo, UI animated</li>
+                            <li>5–7 days · two revision rounds</li>
                         </ul>
-                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="block w-full py-3 rounded-full glass-pill text-center text-xs font-semibold uppercase tracking-wider text-white group-hover:bg-white group-hover:text-black transition-all">
+                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full glass-pill text-center text-xs font-semibold uppercase tracking-wider text-white group-hover:bg-white group-hover:text-black transition-all duration-300">
                             GET STARTED
                         </a>
                     </div>
                 </div>
 
-                <!-- Service Card 2 -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-card-glow reveal-on-scroll flex flex-col justify-between text-center relative overflow-hidden bg-[#07070a]/90 border border-white/10 group cursor-pointer" onclick="window.open('https://tally.so/r/dW6QjN', '_blank')">
+                <!-- Card 2: Explainer Video -->
+                <div class="glass-panel rounded-3xl p-10 hover-card-glow reveal-on-scroll flex flex-col justify-between text-center relative overflow-hidden bg-[#07070a]/90 border border-white/10 group cursor-pointer min-h-[520px]" onclick="window.open('https://tally.so/r/dW6QjN', '_blank')">
                     <div>
-                        <div class="flex items-center justify-center gap-2 text-xs font-mono text-gray-400 mb-6">
+                        <div class="flex items-center justify-center gap-3 text-xs font-mono text-gray-400 mb-10">
                             <span>02</span>
                             <span>•</span>
-                            <span class="uppercase tracking-widest text-[9px]">ONBOARDING</span>
+                            <span class="uppercase tracking-widest text-[10px]">ONBOARDING & CAMPAIGNS</span>
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Explainer Video</h3>
-                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed font-light mb-8">
-                            Turn complex workflow features into instant visual clarity.
+                        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">Explainer Video</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed font-light mb-10 max-w-sm mx-auto">
+                            A clear visual story that turns complex features into moments that click instantly for any viewer.
                         </p>
                     </div>
 
-                    <div class="space-y-4 pt-4 border-t border-white/10 mt-auto">
-                        <ul class="space-y-1.5 text-[11px] font-mono text-gray-400">
-                            <li>60s explainer film</li>
-                            <li>1–2 weeks delivery</li>
+                    <div class="space-y-6 pt-6 border-t border-white/10 mt-auto">
+                        <ul class="space-y-2 text-xs font-mono text-gray-400">
+                            <li>60s explainer · storyboard-first</li>
+                            <li>1–2 weeks · two revision rounds</li>
                         </ul>
-                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="block w-full py-3 rounded-full glass-pill text-center text-xs font-semibold uppercase tracking-wider text-white group-hover:bg-white group-hover:text-black transition-all">
+                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full glass-pill text-center text-xs font-semibold uppercase tracking-wider text-white group-hover:bg-white group-hover:text-black transition-all duration-300">
                             GET STARTED
                         </a>
                     </div>
                 </div>
 
-                <!-- Service Card 3 -->
-                <div class="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-card-glow reveal-on-scroll flex flex-col justify-between text-center relative overflow-hidden bg-[#07070a]/90 border border-white/10 group cursor-pointer" onclick="window.open('https://tally.so/r/dW6QjN', '_blank')">
+                <!-- Card 3: Launch Video -->
+                <div class="glass-panel rounded-3xl p-10 hover-card-glow reveal-on-scroll flex flex-col justify-between text-center relative overflow-hidden bg-[#07070a]/90 border border-white/10 group cursor-pointer min-h-[520px]" onclick="window.open('https://tally.so/r/dW6QjN', '_blank')">
                     <div>
-                        <div class="flex items-center justify-center gap-2 text-xs font-mono text-gray-400 mb-6">
+                        <div class="flex items-center justify-center gap-3 text-xs font-mono text-gray-400 mb-10">
                             <span>03</span>
                             <span>•</span>
-                            <span class="uppercase tracking-widest text-[9px]">LAUNCHES</span>
+                            <span class="uppercase tracking-widest text-[10px]">LAUNCHES & BIG UPDATES</span>
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Launch Video</h3>
-                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed font-light mb-8">
-                            Cinematic flagship film that sets a high-water mark for your launch.
+                        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">Launch Video</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed font-light mb-10 max-w-sm mx-auto">
+                            A cinematic flagship film that gives your release clarity, confidence and a real sense of occasion.
                         </p>
                     </div>
 
-                    <div class="space-y-4 pt-4 border-t border-white/10 mt-auto">
-                        <ul class="space-y-1.5 text-[11px] font-mono text-gray-400">
-                            <li>45–60s flagship video</li>
-                            <li>2–3 weeks turnaround</li>
+                    <div class="space-y-6 pt-6 border-t border-white/10 mt-auto">
+                        <ul class="space-y-2 text-xs font-mono text-gray-400">
+                            <li>45–60s film · script, VO, sound design</li>
+                            <li>2–3 weeks · two revision rounds</li>
                         </ul>
-                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="block w-full py-3 rounded-full glass-pill text-center text-xs font-semibold uppercase tracking-wider text-white group-hover:bg-white group-hover:text-black transition-all">
+                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full glass-pill text-center text-xs font-semibold uppercase tracking-wider text-white group-hover:bg-white group-hover:text-black transition-all duration-300">
                             GET STARTED
                         </a>
                     </div>
@@ -620,28 +763,122 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section id="about" class="max-w-[1400px] mx-auto px-4 sm:px-6 py-20 sm:py-28 border-t border-white/[0.06] relative overflow-hidden">
+        <!-- Process Section -->
+        <section id="process" class="max-w-[1400px] mx-auto px-3 sm:px-6 py-32 border-t border-white/[0.06]">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal-on-scroll">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-gray-500">The Motion Pipeline</span>
+                    <h2 class="text-4xl sm:text-6xl font-bold text-white tracking-tight mt-2">From raw code to cinematic impact</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-light">
+                    Our proprietary 4-stage choreography engine designed specifically to decode SaaS complexity.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Step 01 -->
+                <div class="glass-panel rounded-3xl p-8 hover-card-glow reveal-on-scroll flex flex-col justify-between group relative overflow-hidden bg-[#07070a]/90 border border-white/10">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-white/[0.03] rounded-full blur-xl group-hover:bg-white/[0.08] transition-colors"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">01 / ARCHITECTURE</span>
+                            <span class="w-2 h-2 rounded-full bg-white/40 group-hover:bg-white transition-colors"></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Deconstruct & Script</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed font-light">
+                            We reverse-engineer your product flows, extracting the core "aha!" moments and translating dense documentation into bulletproof narrative scripts.
+                        </p>
+                    </div>
+                    <div class="pt-8 mt-8 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-500">
+                        <span>Duration: 2-3 Days</span>
+                        <span class="text-white">Strategy First</span>
+                    </div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="glass-panel rounded-3xl p-8 hover-card-glow reveal-on-scroll flex flex-col justify-between group relative overflow-hidden bg-[#07070a]/90 border border-white/10">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-white/[0.03] rounded-full blur-xl group-hover:bg-white/[0.08] transition-colors"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">02 / CHOREOGRAPHY</span>
+                            <span class="w-2 h-2 rounded-full bg-white/40 group-hover:bg-white transition-colors"></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Kinetic Style Frames</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed font-light">
+                            High-fidelity visual design meets cinematic camera staging. We establish exact typography, color grades, and UI mockups before any keyframes move.
+                        </p>
+                    </div>
+                    <div class="pt-8 mt-8 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-500">
+                        <span>Duration: 3-4 Days</span>
+                        <span class="text-white">Visual Blueprint</span>
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="glass-panel rounded-3xl p-8 hover-card-glow reveal-on-scroll flex flex-col justify-between group relative overflow-hidden bg-[#07070a]/90 border border-white/10">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-white/[0.03] rounded-full blur-xl group-hover:bg-white/[0.08] transition-colors"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">03 / SIMULATION</span>
+                            <span class="w-2 h-2 rounded-full bg-white/40 group-hover:bg-white transition-colors"></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Motion & Sound Sync</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed font-light">
+                            Buttery-smooth UI interactions rendered at 60fps, tightly coupled with bespoke sound design and professional voiceover telemetry.
+                        </p>
+                    </div>
+                    <div class="pt-8 mt-8 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-500">
+                        <span>Duration: 5-7 Days</span>
+                        <span class="text-white">Precision Render</span>
+                    </div>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="glass-panel rounded-3xl p-8 hover-card-glow reveal-on-scroll flex flex-col justify-between group relative overflow-hidden bg-[#07070a]/90 border border-white/10">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-white/[0.03] rounded-full blur-xl group-hover:bg-white/[0.08] transition-colors"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="px-3 py-1 rounded-full glass-pill text-xs font-mono text-white">04 / DEPLOYMENT</span>
+                            <span class="w-2 h-2 rounded-full bg-white/40 group-hover:bg-white transition-colors"></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Conversion Export</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed font-light">
+                            Optimized web embeds, looping banners, and 4K hero assets delivered across all aspect ratios, ready to boost trial signups instantly.
+                        </p>
+                    </div>
+                    <div class="pt-8 mt-8 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-500">
+                        <span>Duration: Launch Day</span>
+                        <span class="text-white">Ready to Ship</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section replaced with "Let's make the next one count." CTA Section -->
+        <section id="about" class="max-w-[1400px] mx-auto px-3 sm:px-6 py-32 border-t border-white/[0.06] relative overflow-hidden">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal-on-scroll">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <!-- Left Content: Headline & Button -->
+                <div class="lg:col-span-7 space-y-8 z-10">
                     <div>
                         <span class="text-xs font-mono uppercase tracking-widest text-gray-400">HAVE A PROJECT IN MIND?</span>
-                        <h2 class="text-4xl sm:text-6xl xl:text-7xl font-bold text-white tracking-tight mt-3 leading-[1.05]">
+                        <h2 class="text-5xl sm:text-7xl xl:text-8xl font-bold text-white tracking-tight mt-4 leading-[1.05]">
                             Let’s make the next one count.
                         </h2>
                     </div>
-                    <div>
-                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs sm:text-sm hover:bg-gray-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+                    <div class="pt-2">
+                        <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-gray-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
                             <span>Start a project</span>
                             <span>→</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                    <div class="relative w-40 h-40 sm:w-56 sm:h-56 flex items-center justify-center">
-                        <div class="w-28 h-28 sm:w-40 sm:h-40 flex items-center justify-center [animation:spin_8s_linear_infinite]">
-                            <img src="https://i.ibb.co/LjrTS2K/logo.png" alt="Iteration Studios Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]" onerror="this.onerror=null; this.src='https://placehold.co/200x200/030304/ffffff?text=IS';" />
+                <!-- Right Content: Enlarged Rotating Logo Graphic -->
+                <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+                    <div class="relative w-full max-w-[380px] aspect-square flex items-center justify-center">
+                        <div class="absolute inset-0 bg-white/5 rounded-full blur-3xl opacity-40"></div>
+                        <div class="w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center [animation:spin_8s_linear_infinite] relative z-10">
+                            <img src="https://i.ibb.co/LjrTS2K/logo.png" alt="Iteration Studios Logo" class="w-full h-full object-contain filter drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]" onerror="this.onerror=null; this.src='https://placehold.co/200x200/030304/ffffff?text=IS';" />
                         </div>
                     </div>
                 </div>
@@ -649,17 +886,17 @@
         </section>
 
         <!-- Video Modal Lightbox -->
-        <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
-            <div class="relative w-full max-w-4xl bg-cardDark border border-white/20 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
-                <div class="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10">
+        <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-8">
+            <div class="relative w-full max-w-5xl bg-cardDark border border-white/20 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+                <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
                     <div>
-                        <h3 id="modal-title" class="text-sm sm:text-base font-bold text-white">Project Video</h3>
-                        <p id="modal-desc" class="text-[10px] sm:text-xs text-gray-400">Iteration Studios Archive</p>
+                        <h3 id="modal-title" class="text-lg font-bold text-white">Project Video</h3>
+                        <p id="modal-desc" class="text-xs text-gray-400">Iteration Studios Archive</p>
                     </div>
-                    <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors text-xs cursor-pointer">✕</button>
+                    <button onclick="closeVideoModal()" class="w-9 h-9 rounded-full glass-pill flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors cursor-pointer text-sm">✕</button>
                 </div>
                 <div id="modal-content-container" class="relative aspect-video w-full bg-black flex items-center justify-center">
-                    <iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -667,20 +904,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="max-w-[1400px] mx-auto px-4 sm:px-6 py-12 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-        <div class="flex items-center gap-2.5">
-            <div class="w-5 h-5 flex items-center justify-center overflow-hidden">
+    <footer class="max-w-[1400px] mx-auto px-3 sm:px-6 py-16 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+        <div class="flex items-center gap-3">
+            <div class="w-6 h-6 flex items-center justify-center overflow-hidden">
                 <img src="https://i.ibb.co/LjrTS2K/logo.png" alt="Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/030304/ffffff?text=IS';" />
             </div>
             <span>© 2026 Iterations. All rights reserved.</span>
         </div>
-        <div class="flex items-center gap-6 font-medium text-gray-400">
+        <div class="flex items-center gap-8 font-medium text-gray-400">
             <a href="https://tally.so/r/dW6QjN" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Start a project →</a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram ↗</a>
         </div>
     </footer>
 
     <script>
+        // Physical 3D Carousel Logic
         let activePhysicalIndex = 0;
         const physicalCards = document.querySelectorAll('.carousel-physical-card');
         const totalCards = physicalCards.length;
@@ -689,7 +927,8 @@
 
         function scheduleNextSpin() {
             if (carouselTimer) clearTimeout(carouselTimer);
-            const randomInterval = Math.floor(Math.random() * (6000 - 3500 + 1)) + 3500;
+            // Randomized interval between 3 to 6 seconds (3000ms to 6000ms)
+            const randomInterval = Math.floor(Math.random() * (6000 - 3000 + 1)) + 3000;
             carouselTimer = setTimeout(() => {
                 nextPhysicalSlide(false);
                 scheduleNextSpin();
@@ -697,33 +936,32 @@
         }
 
         function updatePhysicalCarousel() {
-            const isMobile = window.innerWidth < 640;
-            const translateXVal = isMobile ? 60 : 130;
-            const translateZVal = isMobile ? -110 : -180;
-            const rotateYVal = isMobile ? 12 : 18;
-
             physicalCards.forEach((card, i) => {
                 const offset = (i - activePhysicalIndex + totalCards) % totalCards;
                 
                 card.classList.remove('pointer-events-none');
                 
                 if (offset === 0) {
+                    // Front Active Card
                     card.style.transform = 'translateX(0px) translateZ(0px) rotateY(0deg) scale(1)';
                     card.style.zIndex = '30';
                     card.style.opacity = '1';
                     card.style.filter = 'blur(0px)';
                 } else if (offset === 1) {
-                    card.style.transform = `translateX(${translateXVal}px) translateZ(${translateZVal}px) rotateY(-${rotateYVal}deg) scale(0.85)`;
+                    // Right Card
+                    card.style.transform = 'translateX(140px) translateZ(-180px) rotateY(-18deg) scale(0.8)';
                     card.style.zIndex = '20';
                     card.style.opacity = '0.7';
                     card.style.filter = 'blur(1px)';
                 } else if (offset === totalCards - 1) {
-                    card.style.transform = `translateX(-${translateXVal}px) translateZ(${translateZVal}px) rotateY(${rotateYVal}deg) scale(0.85)`;
+                    // Left Card
+                    card.style.transform = 'translateX(-140px) translateZ(-180px) rotateY(18deg) scale(0.8)';
                     card.style.zIndex = '20';
                     card.style.opacity = '0.7';
                     card.style.filter = 'blur(1px)';
                 } else {
-                    card.style.transform = 'translateX(0px) translateZ(-280px) rotateY(0deg) scale(0.65)';
+                    // Back Hidden Card
+                    card.style.transform = 'translateX(0px) translateZ(-360px) rotateY(0deg) scale(0.65)';
                     card.style.zIndex = '10';
                     card.style.opacity = '0';
                     card.style.filter = 'blur(3px)';
@@ -731,13 +969,14 @@
                 }
             });
 
+            // Update pagination dots
             dots.forEach((dot, idx) => {
                 if (idx === activePhysicalIndex) {
-                    dot.classList.remove('bg-white/30', 'w-1.5', 'sm:w-2');
-                    dot.classList.add('bg-white', 'w-4', 'sm:w-5');
+                    dot.classList.remove('bg-white/30', 'w-2');
+                    dot.classList.add('bg-white', 'w-5');
                 } else {
-                    dot.classList.remove('bg-white', 'w-4', 'sm:w-5');
-                    dot.classList.add('bg-white/30', 'w-1.5', 'sm:w-2');
+                    dot.classList.remove('bg-white', 'w-5');
+                    dot.classList.add('bg-white/30', 'w-2');
                 }
             });
         }
@@ -745,19 +984,25 @@
         function nextPhysicalSlide(isManual = true) {
             activePhysicalIndex = (activePhysicalIndex + 1) % totalCards;
             updatePhysicalCarousel();
-            if (isManual) scheduleNextSpin();
+            if (isManual) {
+                scheduleNextSpin();
+            }
         }
 
         function prevPhysicalSlide(isManual = true) {
             activePhysicalIndex = (activePhysicalIndex - 1 + totalCards) % totalCards;
             updatePhysicalCarousel();
-            if (isManual) scheduleNextSpin();
+            if (isManual) {
+                scheduleNextSpin();
+            }
         }
 
         function goToSlide(index, isManual = true) {
             activePhysicalIndex = index;
             updatePhysicalCarousel();
-            if (isManual) scheduleNextSpin();
+            if (isManual) {
+                scheduleNextSpin();
+            }
         }
 
         function handleCardClick(index) {
@@ -777,34 +1022,68 @@
             }
         }
 
-        // Swipe Interaction
+        // Drag/Swipe Interactivity
         const deck = document.getElementById('carousel-deck');
         let startX = 0;
+        let isDragging = false;
+
+        deck.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const diff = e.clientX - startX;
+            if (Math.abs(diff) > 70) {
+                if (diff > 0) {
+                    prevPhysicalSlide(true);
+                } else {
+                    nextPhysicalSlide(true);
+                }
+                isDragging = false;
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
 
         deck.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-        }, { passive: true });
+        });
 
         deck.addEventListener('touchend', (e) => {
             const diff = e.changedTouches[0].clientX - startX;
-            if (Math.abs(diff) > 40) {
-                if (diff > 0) prevPhysicalSlide(true);
-                else nextPhysicalSlide(true);
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    prevPhysicalSlide(true);
+                } else {
+                    nextPhysicalSlide(true);
+                }
             }
-        }, { passive: true });
+        });
 
-        window.addEventListener('resize', updatePhysicalCarousel);
         updatePhysicalCarousel();
         scheduleNextSpin();
 
-        // Lightbox Modal
+        deck.addEventListener('mouseenter', () => {
+            if (carouselTimer) clearTimeout(carouselTimer);
+        });
+        deck.addEventListener('mouseleave', () => {
+            scheduleNextSpin();
+        });
+
+        // Video Modal Lightbox Logic
         function openVideoModal(url, title, desc) {
             const modal = document.getElementById('video-modal');
             const iframe = document.getElementById('modal-iframe');
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-desc').textContent = desc;
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
 
             iframe.src = url;
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         }
@@ -812,27 +1091,38 @@
         function closeVideoModal() {
             const modal = document.getElementById('video-modal');
             const iframe = document.getElementById('modal-iframe');
+
             iframe.src = '';
             modal.classList.remove('flex');
             modal.classList.add('hidden');
         }
 
         document.getElementById('video-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'video-modal') closeVideoModal();
+            if (e.target.id === 'video-modal') {
+                closeVideoModal();
+            }
         });
 
-        // Reveal on scroll
+        // Intersection Observer for Scroll Entry Animations
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries, obs) => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observerInstance) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        obs.unobserve(entry.target);
+                        observerInstance.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, observerOptions);
 
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
